@@ -5,19 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SistemaModule } from './modulos/sistema/sistema.module';
 import { AppRoutingModule } from './app.routing.module';
-import { HeaderComponent } from './componentes/header/header.component';
-import { FooterComponent } from './componentes/footer/footer.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LayoutModule } from './componentes/layout/layout.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     SistemaModule,
     HttpClientModule,
+    LayoutModule,
     AppRoutingModule
   ],
   providers: [],

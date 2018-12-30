@@ -1,0 +1,27 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <app-header></app-header>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list class="mat-nav">
+        <a mat-list-item routerLink="/">
+          <mat-icon>dashboard</mat-icon><span class="mat-nav-item"> Dashboard</span>
+        </a>
+        <a mat-list-item routerLink="/login">
+          <mat-icon aria-label="true">account_box</mat-icon><span class="mat-nav-item"> Login</span>
+          </a>
+          <a mat-list-item routerLink="/sistema">
+            <mat-icon aria-label="true">apps</mat-icon><span class="mat-nav-item"> Sistemas</span>
+            </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="container-fluid">
+        
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <app-footer></app-footer>
+</div>
