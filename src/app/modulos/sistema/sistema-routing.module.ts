@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const sistemaRoutes: Routes = [
-  {path: 'sistemas', component: SistemaListComponent},
-  {path: 'sistemas/add', component: SistemaCreateComponent}
+  {path: '', component: SistemaListComponent},
+  {path: 'add', component: SistemaCreateComponent}
 ];
 
 @NgModule({

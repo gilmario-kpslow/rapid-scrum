@@ -4,9 +4,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent},
+  {path: '', component: DashboardComponent, children: [
+    {path: 'sistema', loadChildren: './modulos/sistema/sistema.module#SistemaModule'}
+  ]},
   {path: 'login', component: LoginComponent},
-  {path: 'sistema', redirectTo: '/sistemas', pathMatch: 'full'}
 ];
 
 @NgModule({

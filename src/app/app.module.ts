@@ -17,7 +17,6 @@ import { LayoutModule } from './componentes/layout/layout.module';
   ],
   imports: [
     BrowserModule,
-    SistemaModule,
     HttpClientModule,
     LayoutModule,
     AppRoutingModule
