@@ -7,12 +7,20 @@ import { SistemaCreateComponent } from './sistema-create/sistema-create.componen
 import { SistemaListComponent } from './sistema-list/sistema-list.component';
 import { SistemaRoutingModule } from './sistema-routing.module';
 import { SistemaService } from './sistema.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule,
     SistemaRoutingModule
   ],
   declarations: [SistemaListComponent, SistemaCreateComponent],

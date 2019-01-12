@@ -1,18 +1,11 @@
-<h1>Cadastro de Novo Sistema</h1>
-<form [formGroup]="form" (submit)="save()">
-  <div>
-    <label for="nome">Nome:</label>
-    <input formControlName="nome" id="nome" type="text">
-  </div>
-  <div>
-    <label for="sigla">Sigla:</label>
-    <input formControlName="sigla" id="sigla" type="text">
-  </div>
-  <div>
-    <label for="descricao">Descrição:</label>
-    <input formControlName="descricao" id="descricao" type="text">
-  </div>
-  <div>
-    <button type="submit">Enviar</button>
-  </div>
-</form>
+<div class="example-container">
+  <form [formGroup]="form">
+    <input type="text" formControlName="nome" placeholder="Nome" />
+    <input type="text" formControlName="sigla" placeholder="Sigla" />
+    <input type="text" formControlName="descricao" placeholder="Descrição" />
+  </form>
+</div>
+
+<div class="example-button-row">
+  <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+</div>
