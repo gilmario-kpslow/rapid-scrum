@@ -18,7 +18,7 @@ export class SistemaCreateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private sistemaService: SistemaService,
     private router: Router,
-    ) { }
+    ) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -31,7 +31,7 @@ export class SistemaCreateComponent implements OnInit {
   save() {
     const novoSistema: Sistema = this.form.getRawValue() as Sistema;
     this.sistemaService.save(novoSistema).subscribe(
-      () => this.router.navigate(['']),
+      () => this.router.navigate(['../sistema']),
       err => console.log(err)
     );
   }
