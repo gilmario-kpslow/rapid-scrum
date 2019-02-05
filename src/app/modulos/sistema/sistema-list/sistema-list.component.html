@@ -1,28 +1,8 @@
 <div class="container">
 
   <button mat-raised-button color="primary" [routerLink]="['/sistema/add']">Adicionar</button>
-  <button mat-raised-button color="primary" (click)="remover()">Remover</button>
 
   <table mat-table [dataSource]="sistemas">
-    <ng-container matColumnDef="select">
-      <th mat-header-cell *matHeaderCellDef>
-        <mat-checkbox
-          (change)="$event ? masterToggle() : null"
-          [checked]="selection.hasValue() && isAllSelected()"
-          [indeterminate]="selection.hasValue() && !isAllSelected()"
-        >
-        </mat-checkbox>
-      </th>
-      <td mat-cell *matCellDef="let row">
-        <mat-checkbox
-          (click)="$event.stopPropagation()"
-          (change)="mudou($event)"
-          (change)="$event ? selection.toggle(row) : null"
-          [checked]="selection.isSelected(row)"
-        >
-        </mat-checkbox>
-      </td>
-    </ng-container>
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>No.</th>
       <td mat-cell *matCellDef="let sistema">{{ sistema.id }}</td>
@@ -43,15 +23,17 @@
       <td mat-cell *matCellDef="let sistema">{{ sistema.descricao }}</td>
     </ng-container>
 
+    <ng-container matColumnDef="star" stickyEnd>
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon>more_vert</mat-icon>
+      </td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
-  <!-- <div class="example-button-row">
-    <a [routerLink]="['/sistema/add']">
-      <button mat-fab color="primary">
-        <mat-icon aria-label="add">add</mat-icon>
-      </button>
-    </a>
-  </div> -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
 </div>
