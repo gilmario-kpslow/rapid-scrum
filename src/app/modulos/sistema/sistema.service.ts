@@ -1,21 +1,15 @@
+import { Sistema } from './sistema';
+import { environment } from './../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Sistema } from 'src/app/modulos/sistema/sistema';
-
-const RAPIDSCRUM_API = 'http://localhost:8080';
+import { GenericService } from '../../core/generics/generic.service';
 
 @Injectable()
-export class SistemaService {
+export class SistemaService extends GenericService<Sistema> {
 
-  constructor(private http: HttpClient) {}
-
-  findAll() {
-    return this.http.get<Sistema[]>(`${RAPIDSCRUM_API}/sistemas`);
-  }
-
-  save(novoSistema: Sistema) {
-    return this.http.post(`${RAPIDSCRUM_API}/sistemas`, novoSistema);
+  constructor(private http: HttpClient) {
+    super('sistemas', http, Sistema);
   }
 
 }

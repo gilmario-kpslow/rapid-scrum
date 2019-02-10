@@ -1,5 +1,7 @@
 <app-base-layout>
     <router-outlet>
-      Dashboard
+      <div *ngFor="let sistema of sistemas">
+        {{sistema | json }}
+      </div>
     </router-outlet>
 </app-base-layout>

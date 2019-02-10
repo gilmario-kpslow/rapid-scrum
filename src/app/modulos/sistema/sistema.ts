@@ -1,4 +1,4 @@
-export interface Sistema {
+export class Sistema {
   id: number;
   nome: string;
   sigla: string;

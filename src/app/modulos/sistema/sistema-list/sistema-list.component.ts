@@ -17,7 +17,7 @@ export class SistemaListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.sistemaService.findAll().subscribe(sistemas => this.sistemas = sistemas);
+    this.sistemaService.listar().subscribe(sistemas => this.sistemas = sistemas);
   }
 
 }
