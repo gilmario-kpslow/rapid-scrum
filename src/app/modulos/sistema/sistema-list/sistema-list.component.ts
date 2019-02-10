@@ -1,6 +1,7 @@
 import { Sistema } from './../sistema';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SistemaService } from '../sistema.service';
+import { MatTableDataSource, MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-sistema-list',
@@ -10,13 +11,16 @@ import { SistemaService } from '../sistema.service';
 export class SistemaListComponent implements OnInit {
 
   sistemas: Sistema[];
-  displayedColumns: string[] = ['id', 'nome', 'sigla', 'descricao'];
+  displayedColumns: string[] = ['id', 'nome', 'sigla', 'descricao', 'star'];
+  dataSource = new MatTableDataSource<Sistema>(this.sistemas);
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
     private sistemaService: SistemaService
   ) { }
 
   ngOnInit() {
+    this.dataSource.paginator = this.paginator;
     this.sistemaService.listar().subscribe(sistemas => this.sistemas = sistemas);
   }
 

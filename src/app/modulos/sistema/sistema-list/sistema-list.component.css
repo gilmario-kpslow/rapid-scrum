@@ -1,6 +1,10 @@
+.container {
+  margin: 40px 40px;
+}
+
 table {
   width: 100%;
-  padding-top: 20px;
+  padding-top: 80px;
 }
 
 .example-button-row button,

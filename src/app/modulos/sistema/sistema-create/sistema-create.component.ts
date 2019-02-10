@@ -36,4 +36,8 @@ export class SistemaCreateComponent implements OnInit {
     );
   }
 
+  voltar() {
+    this.router.navigate(['../sistema']);
+  }
+
 }
