@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 
 import { SistemaService } from '../sistema.service';
 import { Sistema } from './../sistema';
@@ -13,16 +13,16 @@ import { Sistema } from './../sistema';
 export class SistemaCreateComponent implements OnInit {
 
   form: FormGroup;
-
   constructor(
     private formBuilder: FormBuilder,
     private sistemaService: SistemaService,
     private router: Router,
     ) {}
 
+    
   ngOnInit() {
     this.form = this.formBuilder.group({
-      nome: ['', Validators.required],
+      nome: ['', [Validators.required, Validators.minLength(3)]],
       sigla: ['', Validators.required],
       descricao: ['', Validators.required]
     });

@@ -10,8 +10,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatListModule } from '@angular/material/list'
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatIconModule, MatIcon } from '@angular/material/icon';
+import { MatFormFieldModule, MatInputModule, MatSnackBarModule, MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [BaseLayoutComponent, HeaderComponent, FooterComponent],
@@ -25,11 +25,12 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    // MatCardModule,
+    MatSnackBarModule,
+    MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     // MatTableModule
   ],
-  exports: [BaseLayoutComponent]
+  exports: [BaseLayoutComponent, MatCardModule, MatButtonModule, MatIcon]
 })
 export class LayoutModule { }

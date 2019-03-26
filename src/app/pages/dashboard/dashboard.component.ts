@@ -11,13 +11,11 @@ export class DashboardComponent implements OnInit {
 
   sistemas: Sistema[] = [];
   constructor(
-    // private service: SistemaService
+    private service: SistemaService
   ) { }
 
   ngOnInit() {
-    // this.service.listar().subscribe(lista => {
-    //   this.sistemas = lista
-    // });
+    this.service.listar().subscribe(lista => this.sistemas = lista);
   }
 
 }

@@ -7,11 +7,14 @@ import { AppRoutingModule } from './app.routing.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutModule } from './componentes/layout/layout.module';
+import { SistemaService } from './modulos/sistema/sistema.service';
+import { SistemaCardComponent } from './pages/dashboard/sistema-card/sistema-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
+    SistemaCardComponent,
     LoginComponent
   ],
   imports: [
@@ -20,7 +23,7 @@ import { LayoutModule } from './componentes/layout/layout.module';
     LayoutModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SistemaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

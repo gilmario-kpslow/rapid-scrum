@@ -1,7 +1,3 @@
-<app-base-layout>
-    <router-outlet>
-      <div *ngFor="let sistema of sistemas">
-        {{sistema | json }}
-      </div>
-    </router-outlet>
-</app-base-layout>
+  <div *ngFor="let sistema of sistemas" class="box">
+    <app-sistema-card [sistema]='sistema'></app-sistema-card>
+  </div>

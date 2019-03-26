@@ -1,46 +1,22 @@
 <div class="container">
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Cadastro de sistemas</mat-card-title>
+      <mat-card-title>Registrar um novo sistema</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form class="form" [formGroup]="form" novalidate>
+      <form class="form" [formGroup]="form">
         <mat-form-field class="full-width">
-          <input
-            matInput
-            placeholder="Nome"
-            formControlName="nome"
-            type="text"
-          />
+          <input matInput placeholder="Nome" formControlName="nome" type="text" maxlength="30" minlength="3"/>
         </mat-form-field>
         <mat-form-field class="full-width">
-          <input
-            matInput
-            placeholder="Sigla"
-            formControlName="sigla"
-            type="text"
-          />
+          <input matInput placeholder="Sigla" formControlName="sigla" type="text" maxlength="5" minlength="5"/>
         </mat-form-field>
         <mat-form-field class="full-width">
-          <input
-            matInput
-            placeholder="Descrição"
-            formControlName="descricao"
-            type="text"
-          />
+          <input matInput placeholder="Descrição" formControlName="descricao" type="text" minlength="10"/>
         </mat-form-field>
         <mat-card-actions>
-          <button mat-raised-button color="primary" (click)="voltar()">
-            Voltar
-          </button>
-          <button
-            mat-raised-button
-            color="primary"
-            (click)="save()"
-            [disabled]="form.invalid"
-          >
-            Salvar
-          </button>
+          <button mat-raised-button color="primary" (click)="voltar()"> Voltar</button>
+          <button mat-raised-button color="primary" (click)="save()" [disabled]="form.invalid">Salvar</button>
         </mat-card-actions>
       </form>
     </mat-card-content>

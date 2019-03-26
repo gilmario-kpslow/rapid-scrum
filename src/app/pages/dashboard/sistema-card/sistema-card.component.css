@@ -1,0 +1,16 @@
+:host{
+    width: 100%;
+    margin: 50px;
+}
+
+:host img {
+    width: 350px;
+}
+
+.titulo{
+    text-transform: capitalize;
+}
+
+.subtitulo{
+    text-transform: capitalize;
+}
