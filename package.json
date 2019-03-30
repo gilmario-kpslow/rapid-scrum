@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --aot",
-    "homol": "ng build --prod --aot -c homol",
+    "prod": "ng build --prod --aot",
+    "development": "ng build --prod --aot -c development",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

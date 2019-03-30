@@ -45,11 +45,11 @@
               "vendorChunk": false,
               "buildOptimizer": true
             },
-            "homol": {
+            "development": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.homol.ts"
+                  "with": "src/environments/environment.dev.ts"
                 }
               ],
               "optimization": true,
