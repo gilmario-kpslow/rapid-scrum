@@ -1,0 +1,17 @@
+.container {
+    margin: 40px 40px;
+  }
+  
+  table {
+    width: 100%;
+    padding-top: 80px;
+  }
+  
+  .example-button-row button,
+  .example-button-row a {
+    margin-right: 8px;
+    position: fixed;
+    top: 85px;
+    left: 10px;
+  }
+  

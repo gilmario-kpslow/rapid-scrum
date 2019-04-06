@@ -1,0 +1,31 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Registrar um novo módulo</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="form" [formGroup]="form">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Nome" formControlName="nome" type="text" minlength="3"/>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Descrição" formControlName="descricao" type="text" minlength="10"/>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Sistema</mat-label>
+          <mat-select formControlName='sistema'>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let sistema of sistemas" [value]="sistema">
+              {{sistema.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="voltar()"> Voltar</button>
+          <button mat-raised-button color="primary" (click)="save()" [disabled]="form.invalid">Salvar</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+

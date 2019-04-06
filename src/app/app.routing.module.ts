@@ -7,7 +7,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 const routes: Routes = [
   {path: '', component: BaseLayoutComponent, children: [
     {path: '', component: DashboardComponent},
-    {path: 'sistema', loadChildren: './modulos/sistema/sistema.module#SistemaModule'}
+    {path: 'sistema', loadChildren: './modulos/sistema/sistema.module#SistemaModule'},
+    {path: 'modulo', loadChildren: './modulos/modulo/modulo.module#ModuloModule'}
   ]},
   {path: 'login', component: LoginComponent},
 ];
