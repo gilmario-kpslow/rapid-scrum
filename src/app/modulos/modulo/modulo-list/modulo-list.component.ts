@@ -24,5 +24,11 @@ export class ModuloListComponent implements OnInit {
     this.moduloService.listar().subscribe(modulos => this.modulos = modulos)
   }
 
+  remover(id: number) {
+    this.moduloService.remover(id).subscribe(() => {
+      this.moduloService.listar().subscribe(modulos => this.modulos = modulos)
+    })
+  }
+
 }
 

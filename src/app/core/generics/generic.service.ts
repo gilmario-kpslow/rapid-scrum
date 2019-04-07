@@ -1,7 +1,7 @@
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Serializador } from './serializador';
-import { map, take } from 'rxjs/operators';
+import { map, take, catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs'
 
 export abstract class GenericService<T> {
@@ -22,7 +22,12 @@ export abstract class GenericService<T> {
 
   save(entity: T) {
     return this._http.post(`${this.url}`, entity)
-    .pipe( take(1));
+    .pipe( take(1))
+  }
+
+  remover(id: number): Observable<{}> {
+    return this._http.delete(`${this.url}/${id}`)
+      .pipe(take(1))
   }
 
   protected deserializeList(lista: T[]): T[] {
@@ -33,6 +38,5 @@ export abstract class GenericService<T> {
     return this.serializador.fromJson(e);
   }
 
-
-
 }
+

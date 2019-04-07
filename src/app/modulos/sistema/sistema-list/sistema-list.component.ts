@@ -24,4 +24,10 @@ export class SistemaListComponent implements OnInit {
     this.sistemaService.listar().subscribe(sistemas => this.sistemas = sistemas);
   }
 
+  remover(id: number) {
+    this.sistemaService.remover(id).subscribe(() => {
+      this.sistemaService.listar().subscribe(sistemas => this.sistemas = sistemas)
+    })
+  }
+
 }

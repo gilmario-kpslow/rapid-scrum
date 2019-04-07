@@ -14,7 +14,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatMenuModule
 } from '@angular/material';
 
 @NgModule({
@@ -31,6 +32,7 @@ import {
     MatInputModule,
     MatCardModule,
     MatCheckboxModule,
+    MatMenuModule,
     ModuloRoutingModule
   ],
   providers: [ModuloService]
