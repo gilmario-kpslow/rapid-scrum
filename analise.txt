@@ -1,12 +1,26 @@
-Projeto
-  Backlogs
-
-
-
-
 Time
 
+  Projetos
+    Backlogs
+
+  Integrantes
+    Integrante time - Usuarios
+  Scrum master - Perfil
+  Product Owener - Perfil
 
 
-Spring
+
+
+
+Sprint
+  Backlogs-Spring
+    Status
+    Tarefas
+    Dependencias
+      Backlogs
+    Integrantes
+  Data inicial
+  Data final
+  Aprovação final
+
 

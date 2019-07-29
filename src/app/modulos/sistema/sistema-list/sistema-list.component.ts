@@ -13,7 +13,7 @@ export class SistemaListComponent implements OnInit {
   sistemas: Sistema[];
   displayedColumns: string[] = ['id', 'nome', 'sigla', 'descricao', 'star'];
   dataSource = new MatTableDataSource<Sistema>(this.sistemas);
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator, null) paginator: MatPaginator;
 
   constructor(
     private sistemaService: SistemaService

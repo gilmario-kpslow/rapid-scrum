@@ -13,7 +13,7 @@ export class ModuloListComponent implements OnInit {
   modulos: Modulo[]
   displayedColumns: string[] = ['id', 'nome', 'descricao', 'sistema', 'star']
   dataSource = new MatTableDataSource<Modulo>(this.modulos)
-  @ViewChild(MatPaginator) paginator: MatPaginator
+  @ViewChild(MatPaginator, null) paginator: MatPaginator
 
   constructor(
     private moduloService: ModuloService

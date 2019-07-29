@@ -9,6 +9,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { LayoutModule } from './componentes/layout/layout.module';
 import { SistemaService } from './modulos/sistema/sistema.service';
 import { SistemaCardComponent } from './pages/dashboard/sistema-card/sistema-card.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { SistemaCardComponent } from './pages/dashboard/sistema-card/sistema-car
     BrowserModule,
     HttpClientModule,
     LayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [SistemaService],
   bootstrap: [AppComponent]
