@@ -23,4 +23,11 @@ Sprint
   Data final
   Aprovação final
 
+Regras
+  - O Backlog deve pertencer a um Projeto
+  - Uma sprint deve conter um lista de Backlogs
+  - Um projeto deve possuir pelo menos um time antes de iniciar uma sprint
+  -
+
+
 

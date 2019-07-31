@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ModuloService } from '../modulo.service';
-import { Modulo } from '../modulo';
-import { SistemaService } from '../../sistema/sistema.service';
-import { Sistema } from '../../sistema/sistema';
+import { Component, OnInit } from '@angular/core'
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
+import { Router } from '@angular/router'
+import { ModuloService } from '../modulo.service'
+import { Modulo } from '../modulo'
+import { SistemaService } from '../../sistema/sistema.service'
+import { Sistema } from '../../sistema/sistema'
 
 @Component({
   selector: 'app-modulo-create',
   templateUrl: './modulo-create.component.html',
-  styleUrls: ['./modulo-create.component.css']
+  styleUrls: ['./modulo-create.component.scss']
 })
 export class ModuloCreateComponent implements OnInit {
 

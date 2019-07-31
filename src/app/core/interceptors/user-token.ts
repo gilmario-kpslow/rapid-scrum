@@ -1,4 +1,4 @@
 export class UserToken {
-    token: string;
-    nome: string;
+    token: string
+    nome: string
 }

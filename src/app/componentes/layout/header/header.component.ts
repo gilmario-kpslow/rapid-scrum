@@ -1,20 +1,20 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() clickEvent = new EventEmitter();
+  @Output() clickEvent = new EventEmitter()
   constructor() { }
 
   ngOnInit() {
   }
 
-  onClick(){
-    this.clickEvent.emit();
+  onClick() {
+    this.clickEvent.emit()
   }
 
 }

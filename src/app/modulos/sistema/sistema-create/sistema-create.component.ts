@@ -8,7 +8,7 @@ import { Sistema } from './../sistema';
 @Component({
   selector: 'app-sistema-create',
   templateUrl: './sistema-create.component.html',
-  styleUrls: ['./sistema-create.component.css']
+  styleUrls: ['./sistema-create.component.scss']
 })
 export class SistemaCreateComponent implements OnInit {
 
@@ -19,7 +19,7 @@ export class SistemaCreateComponent implements OnInit {
     private router: Router,
     ) {}
 
-    
+
   ngOnInit() {
     this.form = this.formBuilder.group({
       nome: ['', [Validators.required, Validators.minLength(3)]],

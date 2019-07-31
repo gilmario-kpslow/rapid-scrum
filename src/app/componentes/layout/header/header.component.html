@@ -1,6 +1,16 @@
-<mat-toolbar color="primary" class="example-toolbar">
-  <button  mat-mini-fab color="primary" (click)="onClick()">
-    <mat-icon aria-label="true">reorder</mat-icon>
-  </button>
-  <h1 class="example-app-name"> Rapid - Scrum</h1>
+<mat-toolbar color="primary">
+  <div class="d-flex max-width">
+    <div>
+      <button mat-icon-button (click)="onClick()">
+        <mat-icon>dashboard</mat-icon>
+      </button>
+    </div>
+    <div class="align-self-center">
+      <h1 class="app-name pl-3 pr-3"> Rapid - Scrum</h1>
+    </div>
+    <div class="flex-fill">
+        <mat-icon>more_horiz</mat-icon>
+    </div>
+  </div>
+
 </mat-toolbar>

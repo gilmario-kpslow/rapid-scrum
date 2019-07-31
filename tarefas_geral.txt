@@ -1,0 +1,18 @@
+[] - modelar entidades
+    [] - projeto
+        time responsavel
+        productowner - usuario
+        scrummaster - usuario
+    [] - Sistema
+    [] - modulo
+    [] - submodulo
+    [] -
+    [] - usuario
+    [] - preferencias_usuario
+    [] - senha_usuario
+    [] - Time - lista de usuarios
+        compomentes lista de usuarios
+
+
+    [] - WebSocket para atualizar tela em tempo real
+    [] - Servico de notificacoes dinamico

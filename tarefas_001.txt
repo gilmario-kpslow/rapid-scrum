@@ -1,0 +1,26 @@
+Backend
+
+[o] - repositorio generic
+[0] - service generic
+[0] - haldleError
+[0] - controller generico
+[0] - entidade generica
+[o] - modelar usuario
+[o] - criar repositorio
+[o] - criar servico
+[o] - criar controller
+
+
+Fromtend
+[] - Crar entidade generic
+[] - criar service generic
+[] - modelar usuario
+[] - criar servico
+[] - criar componente de cadastro modelo
+[] - inserir perfil do usuario no sistema para mostrar que o mesmo est'a identificado
+
+
+
+
+
+modelar senha

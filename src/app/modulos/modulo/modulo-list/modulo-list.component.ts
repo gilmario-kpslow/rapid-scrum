@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Modulo } from '../modulo';
-import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { ModuloService } from '../modulo.service';
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { Modulo } from '../modulo'
+import { MatTableDataSource, MatPaginator } from '@angular/material'
+import { ModuloService } from '../modulo.service'
 
 @Component({
   selector: 'app-modulo-list',
   templateUrl: './modulo-list.component.html',
-  styleUrls: ['./modulo-list.component.css']
+  styleUrls: ['./modulo-list.component.scss']
 })
 export class ModuloListComponent implements OnInit {
 

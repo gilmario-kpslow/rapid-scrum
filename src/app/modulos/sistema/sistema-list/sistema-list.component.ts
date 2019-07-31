@@ -6,7 +6,7 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 @Component({
   selector: 'app-sistema-list',
   templateUrl: './sistema-list.component.html',
-  styleUrls: ['./sistema-list.component.css']
+  styleUrls: ['./sistema-list.component.scss']
 })
 export class SistemaListComponent implements OnInit {
 

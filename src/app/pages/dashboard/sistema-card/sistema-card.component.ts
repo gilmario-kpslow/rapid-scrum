@@ -4,7 +4,7 @@ import { Sistema } from 'src/app/modulos/sistema/sistema';
 @Component({
   selector: 'app-sistema-card',
   templateUrl: './sistema-card.component.html',
-  styleUrls: ['./sistema-card.component.css']
+  styleUrls: ['./sistema-card.component.scss']
 })
 export class SistemaCardComponent implements OnInit {
 
