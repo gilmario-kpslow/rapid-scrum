@@ -1,16 +1,23 @@
 <mat-toolbar color="primary">
-  <div class="d-flex max-width">
+  <div class="d-flex max-width bg-primary">
     <div>
       <button mat-icon-button (click)="onClick()">
         <mat-icon>dashboard</mat-icon>
       </button>
     </div>
     <div class="align-self-center">
-      <h1 class="app-name pl-3 pr-3"> Rapid - Scrum</h1>
+      <div class="app-name"> Rapid - Scrum</div>
     </div>
-    <div class="flex-fill">
-        <mat-icon>more_horiz</mat-icon>
+    <div class="flex-fill align-self-center d-flex justify-content-end">
+      <button mat-icon-button (click)="onClick()" matTooltip="Notificações" matTooltipPosition="below">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button routerLink="/login" matTooltip="Login" matTooltipPosition="below">
+        <mat-icon>person_pin</mat-icon>
+      </button>
+      <button mat-icon-button (click)="onClick()" matTooltip="Menu" matTooltipPosition="below">
+        <mat-icon>playlist_add</mat-icon>
+      </button>
     </div>
   </div>
-
 </mat-toolbar>

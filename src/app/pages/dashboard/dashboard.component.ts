@@ -1,6 +1,8 @@
 import { SistemaService } from './../../modulos/sistema/sistema.service'
 import { Component, OnInit } from '@angular/core'
 import { Sistema } from '../../modulos/sistema/sistema'
+import { Projeto } from '../../core/projeto/projeto.model'
+import { ProjetoService } from '../../core/projeto/projeto.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -9,13 +11,13 @@ import { Sistema } from '../../modulos/sistema/sistema'
 })
 export class DashboardComponent implements OnInit {
 
-  sistemas: Sistema[] = [];
+  projetos: Projeto[] = []
   constructor(
-    private service: SistemaService
+    private service: ProjetoService
   ) { }
 
   ngOnInit() {
-    this.service.listar().subscribe(lista => this.sistemas = lista);
+    this.service.listar().subscribe(lista => this.projetos = lista)
   }
 
 }

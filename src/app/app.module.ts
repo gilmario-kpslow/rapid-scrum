@@ -11,6 +11,8 @@ import { SistemaService } from './modulos/sistema/sistema.service';
 import { SistemaCardComponent } from './pages/dashboard/sistema-card/sistema-card.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ProjetoService } from './core/projeto/projeto.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,13 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     LayoutModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [SistemaService],
+  providers: [SistemaService, ProjetoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

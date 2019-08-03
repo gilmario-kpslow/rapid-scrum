@@ -1,3 +1,34 @@
-<div>
-
+<div class="d-flex justify-content-center">
+  <mat-card class="login-panel">
+    <mat-card-header>
+        <mat-icon mat-card-avatar class="login-icon">perm_identity</mat-icon>
+        <mat-card-title>LOGIN</mat-card-title>
+        <mat-card-subtitle>Identificar</mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+      <form [formGroup]="group" class="container mt-2">
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field class="max-width">
+              <input type="text" placeholder="Username" matInput formControlName="username">
+            </mat-form-field>
+            <mat-form-field class="max-width">
+                <input type="text" matInput formControlName="password" placeholder="Password">
+              </mat-form-field>
+          </div>
+        </div>
+          </form>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <div class="container mt-3 mb-3">
+        <div class="d-flex justify-content-around">
+          <button mat-flat-button class="flex-fill" color="primary">Login</button>
+          <button mat-flat-button class="flex-fill ml-2" routerLink="/cadastro" color="accent">Cadastrar</button>
+        </div>
+      </div>
+    </mat-card-actions>
+  </mat-card>
 </div>

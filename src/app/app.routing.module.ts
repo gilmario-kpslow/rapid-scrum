@@ -7,10 +7,11 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 const routes: Routes = [
   {path: '', component: BaseLayoutComponent, children: [
     {path: '', component: DashboardComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'cadastro',  loadChildren: './modulos/usuario/usuario.module#UsuarioModule'},
     {path: 'sistema', loadChildren: './modulos/sistema/sistema.module#SistemaModule'},
     {path: 'modulo', loadChildren: './modulos/modulo/modulo.module#ModuloModule'}
   ]},
-  {path: 'login', component: LoginComponent},
 ]
 
 @NgModule({
