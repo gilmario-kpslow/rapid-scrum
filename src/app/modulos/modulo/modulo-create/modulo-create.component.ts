@@ -38,8 +38,8 @@ export class ModuloCreateComponent implements OnInit {
   }
 
   save() {
-    const novoModulo: Modulo = this.form.getRawValue() as Modulo;
-    this.moduloService.save(novoModulo).subscribe(
+    const novoModulo: Modulo = this.form.getRawValue() as Modulo
+    this.moduloService.salvar(novoModulo).subscribe(
       () => this.router.navigate(['../modulo']),
       err => console.log(err)
     )

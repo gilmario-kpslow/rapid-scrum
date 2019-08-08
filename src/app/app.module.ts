@@ -13,6 +13,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProjetoService } from './core/projeto/projeto.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginService } from './core/seguranca/login.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [SistemaService, ProjetoService],
+  providers: [SistemaService, ProjetoService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

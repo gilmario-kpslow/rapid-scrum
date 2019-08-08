@@ -29,15 +29,15 @@ export class SistemaCreateComponent implements OnInit {
   }
 
   save() {
-    const novoSistema: Sistema = this.form.getRawValue() as Sistema;
-    this.sistemaService.save(novoSistema).subscribe(
+    const novoSistema: Sistema = this.form.getRawValue() as Sistema
+    this.sistemaService.salvar(novoSistema).subscribe(
       () => this.router.navigate(['../sistema']),
       err => console.log(err)
-    );
+    )
   }
 
   voltar() {
-    this.router.navigate(['../sistema']);
+    this.router.navigate(['../sistema'])
   }
 
 }

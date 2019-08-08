@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, HostBinding } from '@angular/core'
 
 @Component({
   selector: 'app-painel',
@@ -7,12 +7,14 @@ import { Component, OnInit, Input } from '@angular/core'
 })
 export class PainelComponent implements OnInit {
 
+  @Input() class: string
   @Input() titulo: string
   @Input() subtitulo: string
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

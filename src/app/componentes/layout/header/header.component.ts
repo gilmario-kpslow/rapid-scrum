@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core'
+import { SegurancaService } from '../../../core/seguranca/seguranca.service';
 
 @Component({
   selector: 'app-header',
@@ -8,13 +9,19 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core'
 export class HeaderComponent implements OnInit {
 
   @Output() clickEvent = new EventEmitter()
-  constructor() { }
+  logado: boolean
+  constructor(private segurancaService: SegurancaService) { }
 
   ngOnInit() {
+    this.segurancaService.isLogado((b) => this.logado = b)
   }
 
   onClick() {
     this.clickEvent.emit()
+  }
+
+  isLogado() {
+    return this.logado
   }
 
 }

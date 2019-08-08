@@ -2,7 +2,7 @@ import { Injectable, Injector, NgZone, ErrorHandler } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NotificadorService } from '../comuns/notificador.service';
-import { SegurancaService } from '../comuns/seguranca.service';
+import { SegurancaService } from '../seguranca/seguranca.service';
 
 @Injectable()
 export class AppErrorHandler extends ErrorHandler {
@@ -15,11 +15,11 @@ export class AppErrorHandler extends ErrorHandler {
 
     handleError(errorResponse: HttpErrorResponse | any) {
         const router = this.injector.get(Router);
-        const notificador = this.injector.get(NotificadorService);
-        const store = this.injector.get(SegurancaService);
+        const notificador = this.injector.get(NotificadorService)
+        const store = this.injector.get(SegurancaService)
         if (errorResponse instanceof HttpErrorResponse) {
             console.log(errorResponse)
-            const message = errorResponse.error ? errorResponse.error : undefined;
+            const message = errorResponse.error ? errorResponse.error : undefined
             console.log(message[0])
             this.zone.run(() => {
                 switch (errorResponse.status) {

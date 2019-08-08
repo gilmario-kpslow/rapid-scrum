@@ -15,7 +15,7 @@
       <button mat-icon-button routerLink="/login" matTooltip="Login" matTooltipPosition="below">
         <mat-icon>person_pin</mat-icon>
       </button>
-      <button mat-icon-button (click)="onClick()" matTooltip="Menu" matTooltipPosition="below">
+      <button mat-icon-button (click)="onClick()" *ngIf="isLogado()" matTooltip="Menu" matTooltipPosition="below">
         <mat-icon>playlist_add</mat-icon>
       </button>
     </div>

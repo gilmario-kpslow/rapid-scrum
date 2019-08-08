@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core'
 import { Sistema } from '../../modulos/sistema/sistema'
 import { Projeto } from '../../core/projeto/projeto.model'
 import { ProjetoService } from '../../core/projeto/projeto.service'
+import { Usuario } from '../../core/usuario/usuario';
+import { SegurancaService } from '../../core/seguranca/seguranca.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,12 +14,15 @@ import { ProjetoService } from '../../core/projeto/projeto.service'
 export class DashboardComponent implements OnInit {
 
   projetos: Projeto[] = []
+  usuario: Usuario
   constructor(
-    private service: ProjetoService
+    private service: ProjetoService,
+    private segurancaService: SegurancaService
   ) { }
 
   ngOnInit() {
     this.service.listar().subscribe(lista => this.projetos = lista)
+    this.segurancaService.getUsuario((u) => this.usuario = u)
   }
 
 }

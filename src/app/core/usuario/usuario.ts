@@ -4,5 +4,6 @@ export class Usuario extends GenericEntity {
   nome: string
   sobrenome: string
   email: string
+  username: string
 
 }
