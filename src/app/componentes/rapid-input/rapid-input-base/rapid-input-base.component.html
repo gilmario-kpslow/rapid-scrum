@@ -1,0 +1,6 @@
+<mat-form-field class="max-width" [hideRequiredMarker]="false" *ngIf="inicializado()">
+  <ng-content></ng-content>
+  <mat-icon *ngIf="!validarControle('nome')" color="text-green" matSuffix>done</mat-icon>
+  <mat-icon *ngIf="invalidarControle('nome')" color="warn" matSuffix>clear</mat-icon>
+  <mat-error *ngIf="validarControle('nome')">{{getErros('nome')}}</mat-error>
+</mat-form-field>

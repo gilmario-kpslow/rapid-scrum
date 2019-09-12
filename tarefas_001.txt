@@ -12,11 +12,23 @@ Backend
 
 
 Fromtend
-[] - Crar entidade generic
-[] - criar service generic
-[] - modelar usuario
-[] - criar servico
+[OK] - Crar entidade generic
+[OK] - criar service generic
+[OK] - modelar usuario
+[OK] - criar servico
 [] - criar componente de cadastro modelo
+  [] - padrao de input
+    [] - Validacao
+    [] - mensagens de Validacao
+    [] - criar componente
+  [] - mensagens
+    [] entry componente
+    [] - erro
+    [] - info
+    [] - sucesso
+    [] - alerta
+  [] - notificacao
+  []
 [] - inserir perfil do usuario no sistema para mostrar que o mesmo est'a identificado
 
 

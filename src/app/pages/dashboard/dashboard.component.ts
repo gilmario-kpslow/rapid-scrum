@@ -1,10 +1,8 @@
-import { SistemaService } from './../../modulos/sistema/sistema.service'
 import { Component, OnInit } from '@angular/core'
-import { Sistema } from '../../modulos/sistema/sistema'
 import { Projeto } from '../../core/projeto/projeto.model'
 import { ProjetoService } from '../../core/projeto/projeto.service'
-import { Usuario } from '../../core/usuario/usuario';
-import { SegurancaService } from '../../core/seguranca/seguranca.service';
+import { Usuario } from '../../core/usuario/usuario'
+import { SegurancaService } from '../../core/seguranca/seguranca.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -23,6 +21,14 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.service.listar().subscribe(lista => this.projetos = lista)
     this.segurancaService.getUsuario((u) => this.usuario = u)
+
+    const projeto = new Projeto()
+    projeto.nome = "Sistema integrado de gestao empresarial"
+    projeto.descricao = "Sistema para o gerenciamento de empresas"
+    projeto.sigla = "SIGE"
+    this.projetos.push(projeto)
+
+
   }
 
 }

@@ -14,12 +14,15 @@ import { environment } from '../environments/environment';
 import { ProjetoService } from './core/projeto/projeto.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginService } from './core/seguranca/login.service';
+import { ProjetoModule } from './modulos/projeto/projeto.module';
+import { BlankComponent } from './blank/blank.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SistemaCardComponent,
+    BlankComponent,
     LoginComponent
   ],
   imports: [
@@ -27,6 +30,7 @@ import { LoginService } from './core/seguranca/login.service';
     BrowserAnimationsModule,
     HttpClientModule,
     LayoutModule,
+    ProjetoModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

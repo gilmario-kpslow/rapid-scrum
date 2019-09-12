@@ -49,6 +49,10 @@ export class UsuarioCadastroComponent implements OnInit {
     return this.form.controls[key].invalid
   }
 
+  invalidarControle(key: string): boolean {
+    return this.form.controls[key].invalid && this.form.controls[key].touched
+  }
+
   getErros(key: string): string {
     const erros = Object.keys(this.form.controls[key].errors)
     return this.getMensagemErro(erros)

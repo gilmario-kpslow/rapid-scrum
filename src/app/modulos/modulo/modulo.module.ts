@@ -16,7 +16,7 @@ import {
   MatCardModule,
   MatCheckboxModule,
   MatMenuModule
-} from '@angular/material';
+} from '@angular/material'
 
 @NgModule({
   declarations: [ModuloListComponent, ModuloCreateComponent],
