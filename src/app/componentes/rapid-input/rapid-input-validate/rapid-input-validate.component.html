@@ -1,0 +1,3 @@
+<mat-icon *ngIf="!validarControle()" color="text-green" matSuffix>done</mat-icon>
+<mat-icon *ngIf="invalidarControle()" color="warn" matSuffix>clear</mat-icon>
+<mat-error *ngIf="validarControle()">{{getErros()}}</mat-error>

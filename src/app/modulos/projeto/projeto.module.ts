@@ -3,6 +3,7 @@ import { LayoutModule } from '../../componentes/layout/layout.module'
 import { ProjetoDashComponent } from './projeto-dash/projeto-dash.component'
 import { ProjetoCriarComponent } from './projeto-criar/projeto-criar.component'
 import { ProjetoRoutingModule } from './projeto-routing.module'
+import { RapidInputModule } from '../../componentes/rapid-input/rapid-input.module';
 
 
 
@@ -10,7 +11,8 @@ import { ProjetoRoutingModule } from './projeto-routing.module'
   declarations: [ProjetoDashComponent, ProjetoCriarComponent],
   imports: [
     LayoutModule,
-    ProjetoRoutingModule
+    ProjetoRoutingModule,
+    RapidInputModule
   ],
   exports: [
     ProjetoDashComponent

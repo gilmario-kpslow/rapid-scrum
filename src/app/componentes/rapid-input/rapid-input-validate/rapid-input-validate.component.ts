@@ -1,31 +1,20 @@
-import { Component, OnInit, Input, ContentChild } from '@angular/core';
-import { FormControlName, FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core'
+import { FormControl } from '@angular/forms'
 
 @Component({
-  selector: 'app-rapid-input-base',
-  templateUrl: './rapid-input-base.component.html',
-  styleUrls: ['./rapid-input-base.component.scss']
+  selector: 'app-rapid-input-validate',
+  templateUrl: './rapid-input-validate.component.html',
+  styleUrls: ['./rapid-input-validate.component.scss']
 })
-export class RapidInputBaseComponent implements OnInit {
+export class RapidInputValidateComponent implements OnInit {
 
-  // @ContentChild(FormControl, {static: true}) control: FormControl
-  @Input() name: string
-  @Input() control: any
-  @Input() form: FormGroup
+  @Input() control: FormControl
   constructor() { }
 
   ngOnInit() {
-    this.control = this.form.controls[this.name]
-    console.log(this.control)
   }
-
   validarControle(): boolean {
     return this.control.invalid
-  }
-
-  inicializado() {
-    console.log(this.control !== undefined)
-    return this.control !== undefined
   }
 
   invalidarControle(): boolean {

@@ -1,17 +1,37 @@
-<mat-card class="sistema-card">
-    <mat-card-header>
-      <div mat-card-avatar class="header-image"></div>
-      <mat-card-subtitle class="subtitulo">Cadastro de sistema</mat-card-subtitle>
-      <mat-card-title class="titulo">teste</mat-card-title>
-    </mat-card-header>
+<mat-card class="mt-3 mb-3" color="red">
+  <h3 class="text-uppercase">Criar novo projeto</h3>
+</mat-card>
+<mat-card>
+  <!-- <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-subtitle class="subtitulo">Cadastro de sistema</mat-card-subtitle>
+    <mat-card-title class="titulo">teste</mat-card-title>
+  </mat-card-header> -->
   <mat-card-content>
-      <mat-icon class="mat-icon-rtl-mirror" svgIcon="thumb-up"></mat-icon>
-    <p>
-      Teste
-    </p>
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="col">
+          <mat-form-field>
+            <input type="text" matInput formControlName="nome" autocomplete="off" placeholder="Nome"/>
+            <mat-icon *ngIf="!validarControle('nome')" color="text-green" matSuffix>done</mat-icon>
+            <mat-icon *ngIf="invalidarControle('nome')" color="warn" matSuffix>clear</mat-icon>
+            <mat-error *ngIf="validarControle('nome')">{{getErros('nome')}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+
+        </div>
+      </div>
+    </form>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button>Ver</button>
     <button mat-button>Remover</button>
   </mat-card-actions>
 </mat-card>
+
+<div class="painel">
+  {{form.value | json}}
+</div>
+
+
