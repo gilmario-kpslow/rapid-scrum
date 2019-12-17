@@ -9,7 +9,7 @@
     "create": "ng g c",
     "start": "ng serve",
     "update": "ng update --all",
-    "build": "ng build --prod --aot && http-serve dist -p 80",
+    "build": "ng build --prod --aot && http-serve dist",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
