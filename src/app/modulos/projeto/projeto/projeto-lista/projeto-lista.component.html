@@ -1,0 +1,28 @@
+<p>projeto-lista works!</p>
+<div class=lista>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let p of lista">
+      <div class="card">
+        <div>{{p | json}}</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+          <div>Proejto 01</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card">
+            <div>Proejto 01</div>
+          </div>
+        </div>
+  </div>
+  <div class="paginador">
+    <div>
+      Esquerda
+    </div>
+    <div>3 de 30</div>
+    <div>Direita</div>
+  </div>
+</div>
