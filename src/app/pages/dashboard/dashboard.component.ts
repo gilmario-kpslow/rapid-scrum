@@ -13,13 +13,14 @@ export class DashboardComponent implements OnInit {
 
   projetos: Projeto[] = []
   usuario: Usuario
+  image = 'assets/images/default-project.svg'
   constructor(
     private service: ProjetoService,
     private segurancaService: SegurancaService
   ) { }
 
   ngOnInit() {
-    this.service.listar().subscribe(lista => this.projetos = lista)
+    //this.service.listar().subscribe(lista => this.projetos = lista)
     this.segurancaService.getUsuario((u) => this.usuario = u)
 
     const projeto = new Projeto()

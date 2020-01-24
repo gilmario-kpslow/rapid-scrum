@@ -1,30 +1,41 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Usuario } from '../usuario/usuario';
+import { UsuarioAutenticado } from './usuario-autenticado'
 
 const TOKEN = 'token'
 
 @Injectable({providedIn: 'root'})
 export class SegurancaService {
 
-    private usuario: Usuario
+    private usuario: UsuarioAutenticado
     private logadoEvent: EventEmitter<boolean> = new EventEmitter()
-    private usuarioEvent: EventEmitter<Usuario> = new EventEmitter()
+    private usuarioEvent: EventEmitter<UsuarioAutenticado> = new EventEmitter()
 
     constructor() {
+        const json = localStorage.getItem(TOKEN);
+        if (json) {
+            this.usuario = JSON.parse(json);
+        }
     }
 
-    private token: string
+    private saveUsuario(usuario: UsuarioAutenticado) {
+        if(usuario) {
+            localStorage.setItem(TOKEN, JSON.stringify(usuario));
+        } else {
+            throw new Error("Nao pode salvar um usuario nulo");
+        }
+    }
 
     remove() {
-        sessionStorage.clear()
+        localStorage.clear()
     }
 
     public setToken(token: string): void {
-        this.token = token
+        this.usuario.token = token
     }
 
     public getToken(): string {
-        return this.token
+        return this.usuario.token
     }
 
     public isLogado(fn?: any) {
@@ -36,7 +47,8 @@ export class SegurancaService {
     }
 
     setUsuarioLogado(usuario: Usuario) {
-      this.usuario = usuario
+      this.usuario = new UsuarioAutenticado();
+      this.usuario.nome = usuario.nome;
       this.usuarioEvent.emit(this.usuario)
       this.logadoEvent.emit(true)
     }

@@ -10,9 +10,14 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatListModule } from '@angular/material/list'
 import { RouterModule } from '@angular/router'
 import { MatIconModule } from '@angular/material/icon'
-import { MatInputModule, MatSnackBarModule, MatCardModule, MatTooltipModule, MatDividerModule } from '@angular/material'
-import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatCardModule } from '@angular/material/card'
+import { MatTooltipModule } from '@angular/material/tooltip'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatInputModule } from '@angular/material/input'
+import { ReactiveFormsModule } from '@angular/forms'
 import { PainelComponent } from './painel/painel.component'
+import { MatTableModule } from '@angular/material/table'
 
 @NgModule({
   declarations: [BaseLayoutComponent, HeaderComponent, FooterComponent, PainelComponent],
@@ -30,8 +35,10 @@ import { PainelComponent } from './painel/painel.component'
     MatInputModule,
     MatTooltipModule,
     ReactiveFormsModule,
-    MatDividerModule
-    // MatTableModule
+    MatDividerModule,
+    MatTableModule,
+    MatTooltipModule
+
   ],
   exports: [
     BaseLayoutComponent,
@@ -43,6 +50,8 @@ import { PainelComponent } from './painel/painel.component'
     MatFormFieldModule,
     ReactiveFormsModule,
     MatDividerModule,
-  PainelComponent]
+    MatTooltipModule,
+    PainelComponent
+]
 })
 export class LayoutModule { }

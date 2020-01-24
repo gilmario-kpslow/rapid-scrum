@@ -7,13 +7,9 @@ import { Usuario } from '../usuario/usuario';
 @Injectable()
 export class LoginService {
 
-
-
   urlLogin = `${environment.api}/login`
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) { }
 
   logar(username: string, password: string): Observable<Usuario> {
     return this.http.post<Usuario>(`${this.urlLogin}`, {username, password})

@@ -1,0 +1,12 @@
+<div class="elementos" [@expandir]="status" [ngStyle]="{'margin-left': marginLeft()}" style="z-index: 1;">
+  <ng-content></ng-content>
+</div>
+<div style="float: right;" class="m-0 p-0">
+  <button class="btn-acao"
+  mat-icon-button
+  matTooltipPosition="above"
+  matTooltip="Opções">
+  <mat-icon>more_vert</mat-icon>
+</button>
+</div>
+

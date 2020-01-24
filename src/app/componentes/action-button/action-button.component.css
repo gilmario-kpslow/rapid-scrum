@@ -1,0 +1,16 @@
+.esconder {
+    /* display: none; */
+    /* transition-delay: 500ms;
+    transition-duration: 500ms;
+    transition: all; */
+}
+
+.elementos {
+    position: absolute; 
+    background-color: #fff;
+    width: auto;
+    /* transition-delay: 500ms;
+    transition-duration: 500ms;
+    transition: all; */
+}
+

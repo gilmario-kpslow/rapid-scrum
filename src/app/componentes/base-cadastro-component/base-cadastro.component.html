@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="titulo-padrao pt-3 pb-2" >{{titulo}}</div>
+  <mat-card>
+    <mat-card-content>
+      <ng-content></ng-content>
+    </mat-card-content>
+    <mat-card-footer>
+        <mat-divider></mat-divider>
+      <div class="pl-3 pr-3 pb-3 pt-3">
+        <button mat-raised-button class="mr-2" type="button" color="primary" (click)="salvar()"> <mat-icon>check</mat-icon> Salvar</button>
+        <button botoes mat-raised-button type="button" color="warn" (click)="limpar()"> <mat-icon>clear</mat-icon> Novo / Limpar</button>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+</div>

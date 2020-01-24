@@ -7,7 +7,6 @@ import { BlankComponent } from './blank/blank.component';
 
 const routes: Routes = [
   {path: '', component: BaseLayoutComponent, children: [
-    // {path: '', component: BlankComponent},
     {path: '', component: DashboardComponent},
     {path: 'login', component: LoginComponent},
     {path: 'cadastro',  loadChildren: './modulos/usuario/usuario.module#UsuarioModule'},

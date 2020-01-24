@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="titulo-padrao pt-3 pb-2" >{{titulo}}</div>
+  <mat-card>
+    <mat-card-content>
+      <ng-content></ng-content>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-divider></mat-divider>
+      <div class="pl-3 pr-3 pb-3 pt-3">
+        <button mat-raised-button type="button" color="primary" (click)="efetuarConsulta()"> Consultar</button>
+      </div>
+    </mat-card-footer>
+  </mat-card>
+
+  <div class="row mt-3">
+    <div class="col-md-12 mat-elevation-z1">
+      <mat-table [dataSource]="dataSource" matSort >
+        <ng-container matColumnDef="#">
+          <mat-header-cell style="max-width: 25px;" *matHeaderCellDef>#</mat-header-cell>
+           <mat-cell *matCellDef="let ele" style="max-width: 25px;">
+            <app-action-button left="2">
+              <button mat-icon-button
+                matTooltip="Editar"
+                matTooltipPosition="above"
+                (click)="editar(ele)">
+                <mat-icon>create</mat-icon>
+              </button>
+              <button mat-icon-button
+                matTooltip="Excluir"
+                matTooltipPosition="above"
+                (click)="excluir(ele)">
+                  <mat-icon>delete</mat-icon>
+              </button>
+            </app-action-button>
+          </mat-cell>
+        </ng-container>
+
+        <ng-container [matColumnDef]="c.campo" *ngFor="let c of colunas">
+          <mat-header-cell mat-sort-header *matHeaderCellDef>{{c.nome}}</mat-header-cell>
+          <mat-cell *matCellDef="let ele">{{ processaColuna(ele, c) }}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="colunasExibidas"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: colunasExibidas;"></mat-row>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="pageSizeOptions"></mat-paginator>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div mat-dialog-title class="titulo-padrao text-center">
+   {{ titulo }}
+</div>
+<mat-dialog-content>{{ mensagem }}</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="mt-4 text-center wid-100">
+    <button id="btn-2" class="mr-2" mat-raised-button [mat-dialog-close]="false" *ngIf="botaoNao">{{ botaoNao }}</button>
+    <button id="btn-3" class="mr-2" mat-raised-button [mat-dialog-close]="true" *ngIf="botaoOk" color="primary">{{ botaoOk }}</button>
+    <span *ngIf="!perigo">
+      <button id="btn-1" class="mr-2" mat-raised-button [mat-dialog-close]="true" *ngIf="botaoSim" color="primary">{{botaoSim}}</button>
+    </span>
+    <span *ngIf="perigo">
+      <button id="btn-1" class="mr-2" mat-raised-button [mat-dialog-close]="true" *ngIf="botaoSim" class="mat-raised-button mat-warn">{{ botaoSim }}</button>
+    </span>
+  </div>
+</mat-dialog-actions>

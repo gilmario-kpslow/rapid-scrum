@@ -1,0 +1,10 @@
+:host {
+  margin-top: 1.6em;
+  top: calc(100% - 1.5em);
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  left: 0px;
+  font-size: 75%;
+}

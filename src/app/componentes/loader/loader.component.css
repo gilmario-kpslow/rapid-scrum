@@ -1,0 +1,19 @@
+.loader {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999999999;
+}
+
+.blocker {
+    position: fixed;
+    width: 100%;
+    height: 100%;    
+    z-index: 9999999998;
+    background-color: rgba(150, 150, 150, 0.35);
+    top:0;
+    left: 0;
+}

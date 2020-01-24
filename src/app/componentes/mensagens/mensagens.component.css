@@ -1,0 +1,28 @@
+.message {
+  margin-bottom: 1em;
+  border-radius: 0 !important;
+}
+
+.alert {
+  border-radius: 0 !important;
+  border: none !important;
+  color: white;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.alert-success {
+  background-color: #2e7d32;
+}
+
+.alert-danger {
+  background-color: #c12f3d;
+}
+
+
+.alert-warning {
+  background-color: #ff9800;
+}
+
+.alert-info {
+  background-color: #0091a3;
+}
