@@ -13,13 +13,15 @@ import { ProjetoService } from './core/projeto/projeto.service'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { LoginService } from './core/seguranca/login.service'
 import { BlankComponent } from './blank/blank.component'
+import { SistemaCardComponent } from './pages/dashboard/sistema-card/sistema-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     BlankComponent,
-    LoginComponent
+    LoginComponent,
+    SistemaCardComponent
   ],
   imports: [
     BrowserModule,

@@ -18,9 +18,11 @@ import { MatInputModule } from '@angular/material/input'
 import { ReactiveFormsModule } from '@angular/forms'
 import { PainelComponent } from './painel/painel.component'
 import { MatTableModule } from '@angular/material/table'
+import { MenuLateralComponent } from './menu-lateral/menu-lateral.component'
+import { LayoutService } from './layout.service'
 
 @NgModule({
-  declarations: [BaseLayoutComponent, HeaderComponent, FooterComponent, PainelComponent],
+  declarations: [BaseLayoutComponent, HeaderComponent, FooterComponent, PainelComponent, MenuLateralComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -52,6 +54,10 @@ import { MatTableModule } from '@angular/material/table'
     MatDividerModule,
     MatTooltipModule,
     PainelComponent
-]
+  ],
+  providers: [
+    LayoutService
+  ]
+
 })
 export class LayoutModule { }

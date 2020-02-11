@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy, ViewChild } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout'
 import { MatSidenav } from '@angular/material';
+import { LayoutService } from '../layout.service';
 
 @Component({
   selector: 'app-base-layout',
@@ -12,7 +13,7 @@ export class BaseLayoutComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList
   @ViewChild(MatSidenav, null) nav: MatSidenav;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private service: LayoutService) {
     //this.mobileQuery = media.matchMedia('(max-width: 600px)')
     // this._mobileQueryListener = () => changeDetectorRef.detectChanges()
     // this.mobileQuery.addListener(this._mobileQueryListener)
@@ -29,19 +30,11 @@ export class BaseLayoutComponent implements OnInit, OnDestroy {
   }
 
   toogleNav() {
-    this.nav.toggle();
+    this.nav.toggle()
+    // this.service.toogle()
+
   }
 
-  getMode() {
-    return 'side'
-  }
 
-  isFixed() {
-    return false
-  }
-
-  isOpen() {
-    return true
-  }
 
 }

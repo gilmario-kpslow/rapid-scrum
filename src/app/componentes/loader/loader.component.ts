@@ -1,10 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { LoaderService } from './loader.service';
+import { Component, OnInit, Input } from '@angular/core'
+import { LoaderService } from './loader.service'
 
 @Component({
   selector: 'app-loader',
   templateUrl: './loader.component.html',
-  styleUrls: ['./loader.component.css', '../../../assets/css/loading.css']
+  styleUrls: ['./loader.component.css']
 })
 export class LoaderComponent implements OnInit {
 
@@ -12,7 +12,7 @@ export class LoaderComponent implements OnInit {
   constructor(private loaderService: LoaderService) { }
 
   ngOnInit() {
-      this.loaderService.loadEvent.subscribe(e => this.exibir = e);
+      this.loaderService.loadEvent.subscribe(e => this.exibir = e)
   }
 
 }

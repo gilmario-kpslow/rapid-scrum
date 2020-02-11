@@ -1,7 +1,7 @@
-import { Coluna } from '../../core/generic/coluna.model';
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Sort, MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { Coluna } from 'src/app/core/generics/coluna.model';
 
 @Component({
   selector: 'app-base-list',

@@ -13,6 +13,7 @@ import { IndicadorErrosComponent } from './indicador-erros/indicador-erros.compo
 import { TimeDirective } from './directives/time.directive';
 import { MensagensComponent } from './mensagens/mensagens.component';
 import { ActionButtonComponent } from './action-button/action-button.component';
+import { DateParseDirective } from './directives/date-parse.directive';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { ActionButtonComponent } from './action-button/action-button.component';
     TimeDirective,
     MensagemContainerComponent,
     MensagensComponent,
-    ActionButtonComponent
+    ActionButtonComponent,
+    DateParseDirective
 
   ],
   exports: [
@@ -44,7 +46,8 @@ import { ActionButtonComponent } from './action-button/action-button.component';
     MesanoDirective,
     TimeDirective,
     IndicadorErrosComponent,
-    MensagemContainerComponent
+    MensagemContainerComponent,
+    DateParseDirective
 
   ],
   providers: [
