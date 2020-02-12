@@ -16,7 +16,7 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
 
   @Input() type = 'text'
   @Input() maxlength
-  @Input() mainlength
+  @Input() minlength
 
   focused = false
   private _placeholder: string
