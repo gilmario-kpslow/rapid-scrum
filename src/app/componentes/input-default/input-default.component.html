@@ -1,0 +1,4 @@
+<mat-form-field class="max-width">
+  <input [type]="type" matInput [formControl]="control" [maxlength]="maxlength" [minlength]="minlength" [placeholder]="placeholder"/>
+  <mat-error *ngIf="mostraErro()">{{erros()}}</mat-error>
+</mat-form-field>

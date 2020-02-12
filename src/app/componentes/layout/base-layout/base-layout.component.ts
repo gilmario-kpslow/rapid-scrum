@@ -8,31 +8,35 @@ import { LayoutService } from '../layout.service';
   templateUrl: './base-layout.component.html',
   styleUrls: ['./base-layout.component.scss']
 })
-export class BaseLayoutComponent implements OnInit, OnDestroy {
+export class BaseLayoutComponent implements OnInit {
 
   mobileQuery: MediaQueryList
-  @ViewChild(MatSidenav, null) nav: MatSidenav;
+  open = true
+  mode = 'side'
+  fixed = false
+  mobile: MediaQueryList
+  @ViewChild(MatSidenav, null) nav: MatSidenav
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private service: LayoutService) {
-    //this.mobileQuery = media.matchMedia('(max-width: 600px)')
-    // this._mobileQueryListener = () => changeDetectorRef.detectChanges()
-    // this.mobileQuery.addListener(this._mobileQueryListener)
+  constructor(media: MediaMatcher, private service: LayoutService) {
+    this.mobileQuery = media.matchMedia('(min-width: 1024px)')
+    this.mobileQuery.onchange = ve => this.verifiMedia()
+    this.mobile = media.matchMedia('(min-width: 576px)')
+
   }
 
   ngOnInit() {
-  }
-
-  _mobileQueryListener(): void {
-  }
-
-  ngOnDestroy(): void {
-    //this.mobileQuery.removeListener(this._mobileQueryListener)
+    this.verifiMedia()
   }
 
   toogleNav() {
     this.nav.toggle()
-    // this.service.toogle()
+  }
 
+  private verifiMedia() {
+    this.open = this.mobileQuery.matches
+    //this.isMobile = this.mobileQuery.matches
+    //this.fixed = !this.mobileQuery.matches
+    this.mode = !this.mobileQuery.matches ? 'over' : 'side'
   }
 
 

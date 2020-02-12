@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { LoginService } from '../../core/seguranca/login.service';
 import { SegurancaService } from '../../core/seguranca/seguranca.service';
 
@@ -10,12 +10,12 @@ import { SegurancaService } from '../../core/seguranca/seguranca.service';
 })
 export class LoginComponent implements OnInit {
 
-  group: FormGroup
+  form: FormGroup
 
   constructor(private build: FormBuilder, private loginService: LoginService, private segurancaService: SegurancaService) {
-    this.group = this.build.group({
-      username: [''],
-      password: ['']
+    this.form = this.build.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     })
   }
 
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.loginService.logar(this.group.value.username, this.group.value.password).subscribe(u => {
+    this.loginService.logar(this.form.value.username, this.form.value.password).subscribe(u => {
       this.segurancaService.setUsuarioLogado(u)
     })
   }

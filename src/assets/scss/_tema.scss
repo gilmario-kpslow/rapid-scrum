@@ -1,23 +1,29 @@
-/**
-7C7070 - 2 E
-3D3D37 - 1 E
-303030 - CENTRAL
-595F63 - 1 D
-70787C - 2 D
-**/
+//
+//
+//
+//
+//
+$primaryColor: #1976d2;
+$primaryLightColor: #63a4ff;
+$primaryDarkColor: #004ba0;
+$secondaryColor: #00796b;
+$secondaryLightColor: #48a999;
+$secondaryDarkColor: #004c40;
+$primaryTextColor: #ffffff;
+$secondaryTextColor: #ffffff;
 
 @import '~@angular/material/theming';
 
 @include mat-core();
 
-$candy-app-primary: mat-palette($mat-indigo);
-$candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$candy-app-primary: mat-palette($mat-indigo, A500);
+$candy-app-accent: mat-palette($mat-pink);
 
 $green-tema: #b1cbbb;
 
 $candy-app-warn: mat-palette($mat-red);
 
-$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+$candy-app-theme: mat-dark-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
 
 @include angular-material-theme($candy-app-theme);
 

@@ -1,5 +1,5 @@
-import { Injector, Injectable } from "@angular/core";
-import { MatSnackBar } from "@angular/material";
+import { Injector, Injectable } from "@angular/core"
+import { MatSnackBar } from "@angular/material"
 
 @Injectable({providedIn: 'root'})
 export class NotificadorService {
@@ -8,6 +8,6 @@ export class NotificadorService {
     }
 
     notificar(mensagem: string, titulo?: string) {
-        this.snacbar.open(mensagem, titulo);
+        this.snacbar.open(mensagem, titulo)
     }
 }

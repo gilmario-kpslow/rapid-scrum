@@ -13,7 +13,8 @@ import { ProjetoService } from './core/projeto/projeto.service'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { LoginService } from './core/seguranca/login.service'
 import { BlankComponent } from './blank/blank.component'
-import { SistemaCardComponent } from './pages/dashboard/sistema-card/sistema-card.component';
+import { SistemaCardComponent } from './pages/dashboard/sistema-card/sistema-card.component'
+import { ComponentesModule } from './componentes/componentes.module'
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SistemaCardComponent } from './pages/dashboard/sistema-card/sistema-car
     BrowserAnimationsModule,
     HttpClientModule,
     LayoutModule,
+    ComponentesModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

@@ -1,4 +1,4 @@
-  <mat-nav-list >
+  <mat-nav-list *ngIf="isLogado()">
     <a mat-list-item routerLink="/">
       <mat-icon>dashboard</mat-icon><span class="mat-nav-item"> Dashboard</span>
     </a>

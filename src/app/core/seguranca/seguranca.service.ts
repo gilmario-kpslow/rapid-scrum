@@ -22,7 +22,7 @@ export class SegurancaService {
         if(usuario) {
             localStorage.setItem(TOKEN, JSON.stringify(usuario));
         } else {
-            throw new Error("Nao pode salvar um usuario nulo");
+            throw new Error("Nao pode salvar um usuario nulo")
         }
     }
 

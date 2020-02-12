@@ -20,9 +20,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.service.listar().subscribe(lista => this.projetos = lista)
     this.segurancaService.getUsuario((u) => this.usuario = u)
-
     const projeto = new Projeto()
     projeto.nome = "Sistema integrado de gestao empresarial"
     projeto.descricao = "Sistema para o gerenciamento de empresas"

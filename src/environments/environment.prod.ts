@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: "https://rapidscrum.herokuapp.com"
+  api: "https://rapidscrum-api.herokuapp.com"
 }

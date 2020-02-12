@@ -1,7 +1,7 @@
 <div class="d-flex flex-column max-height">
   <app-header (clickEvent)="toogleNav()"></app-header>
   <mat-sidenav-container class="flex-fill">
-    <mat-sidenav [mode]="'side'" [fixedInViewport]="false" class="side-nav" [opened]="true">
+    <mat-sidenav [mode]="mode" [fixedInViewport]="fixed" class="side-nav" [ngClass]="{'max-width': !mobile?.matches}" [opened]="open">
       <app-menu-lateral></app-menu-lateral>
     </mat-sidenav>
     <mat-sidenav-content>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from './menu-item.model';
+import { MenuItem } from './menu-item.model'
+import { SegurancaService } from '../../../core/seguranca/seguranca.service'
 
 @Component({
   selector: 'app-menu-lateral',
@@ -9,9 +10,18 @@ import { MenuItem } from './menu-item.model';
 export class MenuLateralComponent implements OnInit {
 
   menu: MenuItem[]
-  constructor() { }
+  logado = false;
+  constructor(private service: SegurancaService) { }
 
   ngOnInit() {
+    return this.service.isLogado((e) => {
+      this.logado = e
+      console.log(e)
+    })
+  }
+
+  isLogado() {
+    return this.logado
   }
 
 }
