@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from './menu-item.model'
 import { SegurancaService } from '../../../core/seguranca/seguranca.service'
+import { AplicacaoService } from '../../../core/applicacao/aplicacao.service'
 
 @Component({
   selector: 'app-menu-lateral',
@@ -10,13 +11,18 @@ import { SegurancaService } from '../../../core/seguranca/seguranca.service'
 export class MenuLateralComponent implements OnInit {
 
   menu: MenuItem[]
-  logado = false;
-  constructor(private service: SegurancaService) { }
+  logado = false
+  constructor(private service: SegurancaService, private applicacaoService: AplicacaoService) {
+    this.menu = applicacaoService._menuDisponivel
+    this.logado = service.isLogado
+  }
 
   ngOnInit() {
-    return this.service.isLogado((e) => {
+    this.service.getLogoutEvent((e) => {
       this.logado = e
-      console.log(e)
+    })
+    this.applicacaoService.menuEvent.subscribe(menu => {
+      this.menu = menu
     })
   }
 

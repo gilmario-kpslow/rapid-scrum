@@ -7,7 +7,7 @@ import { Usuario } from '../usuario/usuario';
 @Injectable()
 export class LoginService {
 
-  urlLogin = `${environment.api}/login`
+  urlLogin = `${environment.api}/autenticar`
 
   constructor(private http: HttpClient) { }
 

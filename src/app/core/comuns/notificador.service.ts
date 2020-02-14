@@ -8,6 +8,6 @@ export class NotificadorService {
     }
 
     notificar(mensagem: string, titulo?: string) {
-        this.snacbar.open(mensagem, titulo)
+        return this.snacbar.open(mensagem, titulo, {duration: 3000}).afterDismissed()
     }
 }

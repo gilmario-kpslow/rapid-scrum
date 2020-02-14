@@ -5,8 +5,8 @@
       <app-menu-lateral></app-menu-lateral>
     </mat-sidenav>
     <mat-sidenav-content>
-      <div class="container-fluid">
-        <router-outlet></router-outlet>
+      <div class="container-fluid full-heigth" [@routeAnimations]="animation">
+        <router-outlet #outlet></router-outlet>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

@@ -53,7 +53,9 @@ import { LayoutService } from './layout.service'
     ReactiveFormsModule,
     MatDividerModule,
     MatTooltipModule,
-    PainelComponent
+    PainelComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   providers: [
     LayoutService

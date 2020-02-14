@@ -10,10 +10,12 @@ export class HeaderComponent implements OnInit {
 
   @Output() clickEvent = new EventEmitter()
   logado: boolean
-  constructor(private segurancaService: SegurancaService) { }
+  constructor(private segurancaService: SegurancaService) {
+    this.logado = this.segurancaService.isLogado
+  }
 
   ngOnInit() {
-    this.segurancaService.isLogado((b) => this.logado = b)
+    this.segurancaService.getLogoutEvent((b) => this.logado = b)
   }
 
   onClick() {

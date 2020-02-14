@@ -1,17 +1,16 @@
-    <mat-card class="class">
-      <mat-card-header>
-          <mat-card-title>{{titulo}}</mat-card-title>
-          <mat-card-subtitle>{{subtitulo}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-divider></mat-divider>
-      <mat-card-content>
-        <ng-content></ng-content>
-      </mat-card-content>
-      <mat-divider></mat-divider>
-      <mat-card-actions>
-          <ng-content select="[footer]"></ng-content>
-
-      </mat-card-actions>
-    </mat-card>
+<mat-card class="class">
+  <mat-card-header>
+      <mat-card-title>{{titulo}}</mat-card-title>
+      <mat-card-subtitle>{{subtitulo}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+  <mat-card-content>
+    <ng-content></ng-content>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <ng-content select="[footer]"></ng-content>
+  </mat-card-actions>
+</mat-card>
 
 

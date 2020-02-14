@@ -1,5 +1,5 @@
-import { Component, Input, OnDestroy, HostBinding, Optional, Self, ElementRef } from '@angular/core'
-import { FormControl, NgControl, ControlValueAccessor, FormControlName } from '@angular/forms';
+import { Component, Input, OnDestroy, HostBinding, Optional, Self, ElementRef, OnInit } from '@angular/core';
+import { FormControl, NgControl, ControlValueAccessor, FormControlName, AbstractControl } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material'
 import { Subject } from 'rxjs'
 import { FocusMonitor } from '@angular/cdk/a11y'
@@ -10,17 +10,16 @@ import { FocusMonitor } from '@angular/cdk/a11y'
   styleUrls: ['./input-default.component.scss'],
   providers: [{provide: MatFormFieldControl, useExisting: InputDefaultComponent}]
 })
-export class InputDefaultComponent implements MatFormFieldControl<string>, OnDestroy, ControlValueAccessor {
+export class InputDefaultComponent implements MatFormFieldControl<string>, OnDestroy, ControlValueAccessor, OnInit {
 
   private static nextId = 0
 
   @Input() type = 'text'
-  @Input() maxlength
-  @Input() minlength
-
+  @Input() maxlength: number
+  @Input() minlength: number
+  @Input() control: FormControl
   focused = false
   private _placeholder: string
-  control: FormControl
   @HostBinding() id = `default-input-${InputDefaultComponent.nextId++}`
   stateChanges = new Subject<void>()
   @Input()
@@ -28,7 +27,7 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
     return this.control.value
   }
   set value(value: string) {
-    this.control.setValue(value)
+    this.writeValue(value)
     this.stateChanges.next()
   }
   @Input()
@@ -75,22 +74,21 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
   onChange = (_: any) => { }
   onTouch = () => { }
 
-  constructor(@Optional() @Self() public ngControl: FormControlName,
+  constructor(@Optional() @Self() public ngControl: NgControl,
     private fm: FocusMonitor, private elRef: ElementRef<HTMLElement>
   ) {
-    console.log(ngControl )
     fm.monitor(elRef.nativeElement, true).subscribe( origin => {
       this.focused = !!origin
       this.stateChanges.next()
     })
-
     if (this.ngControl !== null) {
       this.ngControl.valueAccessor = this
     }
     this.control = new FormControl('')
-    this.control.valueChanges.subscribe(v => this.onChange(v))
-    this.control.setValidators(ngControl.validator)
+  }
 
+  ngOnInit() {
+    this.control = this.ngControl.control as FormControl
   }
 
   setDescribedByIds(ids: string[]) {
@@ -126,7 +124,6 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
      erro.forEach((b ) => {
       switch (b) {
         case 'required': mensagem = `Campo obrigatorio.`
-
           break
         case 'maxlength': mensagem = `O campo deve conter no maximo x caracteres`
           break
@@ -146,13 +143,10 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
     this.onTouch = fn
   }
   setDisabledState?(isDisabled: boolean): void {
-    this.disabled  = isDisabled
-
+    this._disabled  = isDisabled
   }
 
   registerOnChange(fn: any) {
     this.onChange = fn
   }
-
-
 }

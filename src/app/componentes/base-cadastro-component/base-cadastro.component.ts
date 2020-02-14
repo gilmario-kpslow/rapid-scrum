@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core'
 
 @Component({
   selector: 'app-base-cadastro',
@@ -8,17 +8,17 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class BaseCadastroComponent {
 
   @Input() titulo: string;
-  @Output() saveEmitter = new EventEmitter();
-  @Output() limparEmitter = new EventEmitter();
+  @Output() saveEmitter = new EventEmitter()
+  @Output() limparEmitter = new EventEmitter()
 
   constructor() { }
 
   limpar() {
-    this.limparEmitter.emit();
+    this.limparEmitter.emit()
   }
 
   salvar() {
-    this.saveEmitter.emit();
+    this.saveEmitter.emit()
   }
 
 }

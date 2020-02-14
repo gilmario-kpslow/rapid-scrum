@@ -1,20 +1,5 @@
-  <mat-nav-list *ngIf="isLogado()">
-    <a mat-list-item routerLink="/">
-      <mat-icon>dashboard</mat-icon><span class="mat-nav-item"> Dashboard</span>
-    </a>
-    <a mat-list-item routerLink="/login" routerLinkActive="active">
-      <mat-icon aria-label="true">account_box</mat-icon><span class="mat-nav-item"> Login</span>
-    </a>
-    <a mat-list-item routerLink="/projeto">
-      <mat-icon aria-label="true">apps</mat-icon><span class="mat-nav-item"> Projeto</span>
-    </a>
-    <a mat-list-item routerLink="/sistema">
-      <mat-icon aria-label="true">apps</mat-icon><span class="mat-nav-item"> Sistemas</span>
-    </a>
-    <a mat-list-item routerLink="/modulo">
-      <mat-icon aria-label="true">apps</mat-icon><span class="mat-nav-item"> Módulos</span>
-    </a>
-    <a mat-list-item routerLink="/gamesdd">
-      <mat-icon aria-label="true">apps</mat-icon><span class="mat-nav-item"> Game</span>
-    </a>
-  </mat-nav-list>
+<mat-nav-list>
+  <a mat-list-item [routerLink]="i.rota" [routerLinkActive]="i.activeClass" *ngFor="let i of menu">
+    <mat-icon>{{i.icone}}</mat-icon><span class="mat-nav-item"> {{i.nome}}</span>
+  </a>
+</mat-nav-list>

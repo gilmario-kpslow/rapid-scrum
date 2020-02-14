@@ -1,6 +1,7 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { Usuario } from '../usuario/usuario';
+import { Injectable, EventEmitter } from '@angular/core'
+import { Usuario } from '../usuario/usuario'
 import { UsuarioAutenticado } from './usuario-autenticado'
+import { AplicacaoService } from '../applicacao/aplicacao.service';
 
 const TOKEN = 'token'
 
@@ -8,19 +9,19 @@ const TOKEN = 'token'
 export class SegurancaService {
 
     private usuario: UsuarioAutenticado
-    private logadoEvent: EventEmitter<boolean> = new EventEmitter()
     private usuarioEvent: EventEmitter<UsuarioAutenticado> = new EventEmitter()
+    private logadoEvent: EventEmitter<boolean> = new EventEmitter()
 
     constructor() {
-        const json = localStorage.getItem(TOKEN);
+        const json = localStorage.getItem(TOKEN)
         if (json) {
-            this.usuario = JSON.parse(json);
+            this.usuario = JSON.parse(json)
         }
     }
 
     private saveUsuario(usuario: UsuarioAutenticado) {
-        if(usuario) {
-            localStorage.setItem(TOKEN, JSON.stringify(usuario));
+        if (usuario) {
+            localStorage.setItem(TOKEN, JSON.stringify(usuario))
         } else {
             throw new Error("Nao pode salvar um usuario nulo")
         }
@@ -28,6 +29,9 @@ export class SegurancaService {
 
     remove() {
         localStorage.clear()
+        this.usuario = undefined
+        this.usuarioEvent.emit(this.usuario)
+        this.logadoEvent.emit(false)
     }
 
     public setToken(token: string): void {
@@ -38,22 +42,28 @@ export class SegurancaService {
         return this.usuario.token
     }
 
-    public isLogado(fn?: any) {
-        return this.logadoEvent.subscribe((e) => fn(e))
-    }
-
     public tokenIsValido(): boolean {
         return (sessionStorage.length > 0 && this.usuario !== null)
     }
 
     setUsuarioLogado(usuario: Usuario) {
-      this.usuario = new UsuarioAutenticado();
-      this.usuario.nome = usuario.nome;
+      this.usuario = new UsuarioAutenticado()
+      this.usuario.nome = usuario.nome
       this.usuarioEvent.emit(this.usuario)
+      this.saveUsuario(this.usuario)
       this.logadoEvent.emit(true)
     }
 
-    getUsuario(fn?: any) {
+    getUsuario(fn?: Function) {
       return this.usuarioEvent.subscribe((u) => fn(u))
     }
+
+    get isLogado() {
+      return this.usuario !== undefined
+    }
+
+   getLogoutEvent(fn: Function) {
+    return this.logadoEvent.subscribe(u => fn(u))
+   }
+
 }

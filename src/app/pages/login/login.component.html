@@ -1,29 +1,32 @@
-<div class="d-flex justify-content-center">
-  <mat-card class="login-panel">
+<div class="d-flex justify-content-center align-items-center full-heigth">
+  <mat-card class="login-panel align-self-center">
     <mat-card-header>
         <mat-icon mat-card-avatar class="login-icon">perm_identity</mat-icon>
         <mat-card-title>LOGIN</mat-card-title>
-        <mat-card-subtitle>Identificar</mat-card-subtitle>
+        <mat-card-subtitle>Autorizacao de usuario</mat-card-subtitle>
       </mat-card-header>
       <mat-divider></mat-divider>
     <mat-card-content>
       <form [formGroup]="form" class="container mt-2">
         <div class="row">
           <div class="col-12">
-            <app-input-default formControlName="username" placeholder="Username" required></app-input-default>
+            <app-input-default formControlName="username" placeholder="Username" maxlength="50" required></app-input-default>
           </div>
           <div class="col-12">
-            <app-input-default formControlName="password" type="password" placeholder="Password"></app-input-default>
+            <app-input-default formControlName="password" type="password" maxlength="50" placeholder="Password" required></app-input-default>
           </div>
         </div>
       </form>
     </mat-card-content>
     <mat-divider></mat-divider>
     <mat-card-actions>
-      <div class="container mt-3 mb-3">
+      <div class="container mb-2">
         <div class="d-flex justify-content-around">
-          <button mat-flat-button class="flex-fill" color="primary" (click)="login()">Login</button>
-          <button mat-flat-button class="flex-fill ml-2" routerLink="/cadastro" color="accent">Cadastrar</button>
+          <button mat-raised-button class="flex-fill" (click)="login()">Login</button>
+        </div>
+        <div class="mt-2 d-flex">
+          <a class="text-muted text-decoration-none flex-fill" routerLink="/cadastro">Esqueci a senha</a>
+          <a class="text-muted text-decoration-none" routerLink="/cadastro">Quero me cadastrar</a>
         </div>
       </div>
     </mat-card-actions>

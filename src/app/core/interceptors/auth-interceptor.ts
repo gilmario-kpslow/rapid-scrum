@@ -12,7 +12,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const store =  this.injector.get(SegurancaService)
-        if (store.isLogado()) {
+        if (store.isLogado) {
             const requestAuth = req.clone({ setHeaders: { 'Authorization': store.getToken() } })
             return next.handle(requestAuth)
         }
