@@ -14,7 +14,7 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent, canActivate: [LoginGuard], data: {animation: 'login'}},
     {path: 'projeto', canActivate: [AuthService], loadChildren: './modulos/projeto/projeto.module#ProjetoModule',
     data: {animation: 'projeto'}},
-    {path: 'cadastro',  loadChildren: './modulos/usuario/usuario.module#UsuarioModule', data: {animation: 'cadastro'}},
+    {path: 'registro',  loadChildren: './modulos/usuario/usuario.module#UsuarioModule', data: {animation: 'cadastro'}},
     {path: 'apps', loadChildren: './modulos/game/game.module#GameModule', data: {animation: 'apps'}},
     {path: 'sistema', loadChildren: './modulos/sistema/sistema.module#SistemaModule', data: {animation: 'sistema'}},
     {path: 'modulo', loadChildren: './modulos/modulo/modulo.module#ModuloModule', data: {animation: 'modulo'}},
