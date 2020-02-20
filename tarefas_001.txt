@@ -17,10 +17,10 @@ Fromtend
 [OK] - modelar usuario
 [OK] - criar servico
 [] - criar componente de cadastro modelo
-  [] - padrao de input
-    [] - Validacao
-    [] - mensagens de Validacao
-    [] - criar componente
+  [X] - padrao de input
+    [X] - Validacao
+    [X] - mensagens de Validacao
+    [X] - criar componente
   [] - mensagens
     [] entry componente
     [] - erro

@@ -15,6 +15,7 @@ export class AuthService implements CanActivate {
         if (!logado) {
             this.router.navigate(['/login'])
         }
+        console.log(typeof logado)
         return logado
   }
 }

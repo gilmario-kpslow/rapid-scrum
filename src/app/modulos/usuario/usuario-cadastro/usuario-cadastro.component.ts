@@ -4,6 +4,7 @@ import { UsuarioService } from '../../../core/usuario/usuario.service';
 import { NotificadorService } from '../../../core/comuns/notificador.service';
 import { Usuario } from '../../../core/usuario/usuario';
 import { processForm } from '../../../componentes/util/form-utils';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario-cadastro',
@@ -13,12 +14,14 @@ import { processForm } from '../../../componentes/util/form-utils';
 export class UsuarioCadastroComponent implements OnInit {
 
   form: FormGroup
-  constructor(formBuilder: FormBuilder, private notificadorService: NotificadorService, private service: UsuarioService) {
+  constructor(formBuilder: FormBuilder, private notificadorService: NotificadorService, private service: UsuarioService,
+              private router: Router) {
     this.form = formBuilder.group({
       nome: formBuilder.control('', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]),
       nomeCompleto: formBuilder.control('', [Validators.required, Validators.maxLength(40)]),
       email: formBuilder.control('', [Validators.required, Validators.maxLength(255), Validators.email]),
       username: formBuilder.control('', [Validators.required, Validators.minLength(3), Validators.maxLength(40)]),
+      senha: formBuilder.control('', [Validators.required, Validators.minLength(3), Validators.maxLength(40)])
     })
    }
 
@@ -27,7 +30,10 @@ export class UsuarioCadastroComponent implements OnInit {
 
   salvar() {
     processForm(this.form, () => {
-      this.service.salvar(this.form.value).subscribe(entity => this.sucesso(entity))
+      this.service.salvar(this.form.value).subscribe(entity => {
+        this.sucesso(entity)
+        this.router.navigate(['/', 'login'])
+      })
     })
   }
 

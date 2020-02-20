@@ -26,7 +26,7 @@ export abstract class GenericService<T extends GenericEntity> {
   }
 
   salvar(entity: T): Observable<T> {
-    return this._http.post<T>(`${this._url}`, entity)
+    return this._http.post<T>(`${this._url}/registrar`, entity)
     .pipe( take(1))
   }
 

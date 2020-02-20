@@ -24,6 +24,9 @@ export class AppErrorHandler extends ErrorHandler {
                   case 0:
                       notificador.notificar('O Servidor não respondeu. Verifique sua conexao.')
                       break
+                  case 400:
+                    notificador.notificar(message.mensagem)
+                      break
                   case 401:
                     notificador.notificar('Sessao expirada!')
                     store.remove()

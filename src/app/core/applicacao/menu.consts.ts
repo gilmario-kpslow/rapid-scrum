@@ -5,7 +5,7 @@ export class MenuConsts {
   dashboard = new MenuItem({key: 'dashboard', nome: 'Dashboard', rota: ['/dashboard'], icone: 'dashboard'})
   login = new MenuItem({key: 'login', nome: 'Login', rota: ['/', 'login'], icone: 'account_box'})
   cadastro = new MenuItem({key: 'cadastro', nome: 'Participar', rota: ['/', 'registro'], icone: 'person_add'})
-  projeto = new MenuItem({key: 'projeto', nome: 'Projetos', rota: ['/', 'projeto']})
+  projeto = new MenuItem({key: 'projeto', nome: 'Projetos', rota: ['/', 'projeto'], icone: 'description'})
   apps = new MenuItem({key: 'apps', nome: 'Apps', rota: ['/', 'apps']})
   logout = new MenuItem({key: 'logout', nome: 'Logout', rota: ['/', 'logout'], icone: 'exit_to_app'})
   configuracoes = new MenuItem({key: 'conf', nome: 'Configuracao', rota: ['/', 'conf'], icone: 'settings'})

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule, ErrorHandler } from '@angular/core'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app.routing.module'
 import { DashboardComponent } from './pages/dashboard/dashboard.component'
@@ -18,6 +18,7 @@ import { AppErrorHandler } from './core/interceptors/app-error.handler'
 import { LogoutComponent } from './pages/logout/logout.component'
 import { HomeComponent } from './pages/home/home.component'
 import { LoginGuard } from './core/seguranca/LoginGuard'
+import { AuthInterceptor } from './core/interceptors/auth-interceptor'
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LoginGuard } from './core/seguranca/LoginGuard'
   ],
   providers: [ProjetoService, LoginService,
     {provide: ErrorHandler, useClass: AppErrorHandler},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     LoginGuard
   ],
   bootstrap: [AppComponent]

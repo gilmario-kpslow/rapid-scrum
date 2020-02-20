@@ -14,12 +14,15 @@
             <app-input-default formControlName="email" placeholder="Email" maxlength="255" required></app-input-default>
           </div>
           <div class="col-12">
-            <app-input-default formControlName="email" placeholder="Username" maxlength="255" required></app-input-default>
+            <app-input-default formControlName="username" placeholder="Username" maxlength="255" required></app-input-default>
+          </div>
+          <div class="col-12">
+            <app-input-default formControlName="senha" type="password" placeholder="Password" maxlength="255" required></app-input-default>
           </div>
         </div>
       </form>
       <div footer class="d-flex wid-100">
-        <button mat-flat-button color="primary" (click)="salvar()"> Salvar </button>
+        <button mat-raised-button class="flex-fill" (click)="salvar()">Registrar</button>
       </div>
     </app-painel>
   </div>

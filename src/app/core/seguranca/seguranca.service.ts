@@ -43,12 +43,11 @@ export class SegurancaService {
     }
 
     public tokenIsValido(): boolean {
-        return (sessionStorage.length > 0 && this.usuario !== null)
+        return (localStorage.length > 0 && this.usuario !== null)
     }
 
-    setUsuarioLogado(usuario: Usuario) {
-      this.usuario = new UsuarioAutenticado()
-      this.usuario.nome = usuario.nome
+    setUsuarioLogado(usuario: UsuarioAutenticado) {
+      this.usuario = usuario
       this.usuarioEvent.emit(this.usuario)
       this.saveUsuario(this.usuario)
       this.logadoEvent.emit(true)
