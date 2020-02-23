@@ -1,29 +1,24 @@
-
-<div class="mt-5 d-flex justify-content-center" >
-  <div class="wid-100">
-    <app-painel titulo="Cadastrar">
-      <form [formGroup]="form">
-        <div class="row mt-3">
-          <div class="col-12">
-            <app-input-default formControlName="nome" placeholder="Nome" maxlength="40" minlangth="3" required></app-input-default>
-          </div>
-          <div class="col-12">
-            <app-input-default formControlName="nomeCompleto" placeholder="Nome completo" maxlength="40" required></app-input-default>
-          </div>
-          <div class="col-12">
-            <app-input-default formControlName="email" placeholder="Email" maxlength="255" required></app-input-default>
-          </div>
-          <div class="col-12">
-            <app-input-default formControlName="username" placeholder="Username" maxlength="255" required></app-input-default>
-          </div>
-          <div class="col-12">
-            <app-input-default formControlName="senha" type="password" placeholder="Password" maxlength="255" required></app-input-default>
-          </div>
-        </div>
-      </form>
-      <div footer class="d-flex wid-100">
-        <button mat-raised-button class="flex-fill" (click)="salvar()">Registrar</button>
+<app-painel titulo="Cadastrar">
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="col-12">
+        <app-input-default formControlName="nome" placeholder="Nome" maxlength="40" minlangth="3" required></app-input-default>
       </div>
-    </app-painel>
+      <div class="col-12">
+        <app-input-default formControlName="nomeCompleto" placeholder="Nome completo" maxlength="40" required></app-input-default>
+      </div>
+      <div class="col-12">
+        <app-input-default formControlName="email" placeholder="Email" maxlength="255" required></app-input-default>
+      </div>
+      <div class="col-12">
+        <app-input-default formControlName="username" placeholder="Username" maxlength="255" required></app-input-default>
+      </div>
+      <div class="col-12">
+        <app-input-default formControlName="senha" type="password" placeholder="Password" maxlength="255" required></app-input-default>
+      </div>
+    </div>
+  </form>
+  <div footer class="d-flex wid-100">
+    <button mat-raised-button class="flex-fill" (click)="salvar()">Registrar</button>
   </div>
-</div>
+</app-painel>

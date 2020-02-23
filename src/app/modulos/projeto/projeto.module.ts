@@ -5,6 +5,8 @@ import { ProjetoCriarComponent } from './projeto-criar/projeto-criar.component'
 import { ProjetoRoutingModule } from './projeto-routing.module'
 import { RapidInputModule } from '../../componentes/rapid-input/rapid-input.module';
 import { ProjetoListaComponent } from './projeto/projeto-lista/projeto-lista.component';
+import { MaterialModule } from '../../componentes/material/material.module';
+import { ComponentesModule } from '../../componentes/componentes.module';
 
 
 
@@ -13,7 +15,9 @@ import { ProjetoListaComponent } from './projeto/projeto-lista/projeto-lista.com
   imports: [
     LayoutModule,
     ProjetoRoutingModule,
-    RapidInputModule
+    RapidInputModule,
+    MaterialModule,
+    ComponentesModule
   ],
   exports: [
     ProjetoDashComponent

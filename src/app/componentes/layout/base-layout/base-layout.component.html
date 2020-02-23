@@ -6,7 +6,11 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <div class="container-fluid full-heigth" [@routeAnimations]="animation">
-        <router-outlet #outlet></router-outlet>
+        <div class="d-flex justify-content-center" >
+          <div class="wid-100 pt-3 flex-fill">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

@@ -1,5 +1,6 @@
 import { Directive, Renderer2, ElementRef, HostListener, Input } from '@angular/core';
 import { formatar } from '../util/mask-functions';
+import { info } from '../../core/util/log_util';
 
 @Directive({
   selector: '[appDateParse]'
@@ -28,9 +29,9 @@ export class DateParseDirective {
   }
 
   public writeValue(inputValue: string): void {
-      console.log(inputValue);
+      info(inputValue);
       if (inputValue) {
-          console.log(this._applyMask(inputValue));
+          info(this._applyMask(inputValue));
           this.onChange(this._applyMask(inputValue));
       } else {
           this.onChange(undefined);

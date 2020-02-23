@@ -5,6 +5,7 @@ import { ModuloService } from '../modulo.service'
 import { Modulo } from '../modulo'
 import { SistemaService } from '../../sistema/sistema.service'
 import { Sistema } from '../../sistema/sistema'
+import { error } from '../../../core/util/log_util';
 
 @Component({
   selector: 'app-modulo-create',
@@ -33,7 +34,7 @@ export class ModuloCreateComponent implements OnInit {
 
     this.sistemaService.listar().subscribe(
       sistemas => this.sistemas = sistemas,
-      err => console.log(err)
+      err => error(err)
     )
   }
 
@@ -41,7 +42,7 @@ export class ModuloCreateComponent implements OnInit {
     const novoModulo: Modulo = this.form.getRawValue() as Modulo
     this.moduloService.salvar(novoModulo).subscribe(
       () => this.router.navigate(['../modulo']),
-      err => console.log(err)
+      err => error(err)
     )
   }
 

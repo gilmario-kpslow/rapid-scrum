@@ -1,28 +1,17 @@
-<p>projeto-lista works!</p>
+<div>
+    <button class="mr-auto" mat-icon-button [matMenuTriggerFor]="menuRef"><mat-icon>more_vert</mat-icon></button>
+    <mat-menu #menuRef="matMenu" class="text-white">
+      <button mat-icon-button matTooltip="Pesquisar"><mat-icon>search</mat-icon></button>
+      <button mat-icon-button matTooltip="Novo projeto" routerLink="novo"><mat-icon>add</mat-icon></button>
+      <button mat-icon-button matTooltip="Refresh" (click)="listar()"><mat-icon>refresh</mat-icon></button>
+    </mat-menu>
+</div>
 <div class=lista>
 
   <div class="row">
     <div class="col-md-4" *ngFor="let p of lista">
-      <div class="card">
-        <div>{{p | json}}</div>
-      </div>
+      <app-projeto-dash [projeto]="p"></app-projeto-dash>
     </div>
-    <div class="col-md-4">
-        <div class="card">
-          <div>Proejto 01</div>
-        </div>
-      </div>
-      <div class="col-md-4">
-          <div class="card">
-            <div>Proejto 01</div>
-          </div>
-        </div>
   </div>
-  <div class="paginador">
-    <div>
-      Esquerda
-    </div>
-    <div>3 de 30</div>
-    <div>Direita</div>
-  </div>
+  <app-rapid-paginator></app-rapid-paginator>
 </div>

@@ -1,6 +1,7 @@
 import { Directive, forwardRef, Renderer2, ElementRef, HostListener, Input } from '@angular/core'
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms'
 import { formatar } from '../util/mask-functions'
+import { info } from '../../core/util/log_util';
 
 @Directive({
   selector: '[appTime]',
@@ -38,9 +39,9 @@ export class TimeDirective implements ControlValueAccessor {
   }
 
   public writeValue(inputValue: string): void {
-      console.log(inputValue)
+      info(inputValue)
       if (inputValue) {
-          console.log(this._applyMask(inputValue))
+          info(this._applyMask(inputValue))
           this.onChange(this._applyMask(inputValue))
       } else {
           this.onChange(undefined)

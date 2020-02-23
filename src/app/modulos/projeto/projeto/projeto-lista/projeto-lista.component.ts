@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ProjetoService } from '../../../../core/projeto/projeto.service';
-import { Projeto } from '../../../../core/projeto/projeto.model';
+import { Component, OnInit } from '@angular/core'
+import { ProjetoService } from '../../../../core/projeto/projeto.service'
+import { Projeto } from '../../../../core/projeto/projeto.model'
 
 @Component({
   selector: 'app-projeto-lista',
@@ -13,6 +13,10 @@ export class ProjetoListaComponent implements OnInit {
   constructor(private service: ProjetoService) { }
 
   ngOnInit() {
+   this.listar()
+  }
+
+  listar() {
     this.service.listar().subscribe(lista => this.lista = lista)
   }
 

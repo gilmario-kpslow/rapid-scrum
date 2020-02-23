@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { info, error } from '../../../core/util/log_util';
 
 @Component({
   selector: 'app-game-dash',
@@ -14,16 +15,16 @@ export class GameDashComponent implements OnInit {
     const socket = new WebSocket("ws://localhost:8080/game");
     socket.binaryType = "arraybuffer"
     socket.onopen = (e) => {
-      console.log(e);
-      console.log("open");
+      info(e);
+      info("open");
     }
 
     socket.onmessage = (e) => {
-      console.log(e);
+      info(e);
     }
 
     socket.onerror = (er) => {
-      console.log(er);
+      error(er);
     }
   }
 

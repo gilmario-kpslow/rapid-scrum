@@ -14,7 +14,8 @@ import { TimeDirective } from './directives/time.directive'
 import { MensagensComponent } from './mensagens/mensagens.component'
 import { ActionButtonComponent } from './action-button/action-button.component'
 import { DateParseDirective } from './directives/date-parse.directive'
-import { InputDefaultComponent } from './input-default/input-default.component'
+import { InputDefaultComponent } from './input-default/input-default.component';
+import { RapidPaginatorComponent } from './rapid-paginator/rapid-paginator.component'
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { InputDefaultComponent } from './input-default/input-default.component'
     MensagensComponent,
     ActionButtonComponent,
     DateParseDirective,
-    InputDefaultComponent
+    InputDefaultComponent,
+    RapidPaginatorComponent
 
   ],
   exports: [
@@ -50,7 +52,8 @@ import { InputDefaultComponent } from './input-default/input-default.component'
     IndicadorErrosComponent,
     MensagemContainerComponent,
     DateParseDirective,
-    InputDefaultComponent
+    InputDefaultComponent,
+    RapidPaginatorComponent
 
 
   ],

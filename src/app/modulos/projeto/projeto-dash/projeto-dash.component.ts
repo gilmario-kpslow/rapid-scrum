@@ -10,15 +10,19 @@ import { Router } from '@angular/router'
 })
 export class ProjetoDashComponent implements OnInit {
 
-  @Input() projetos: Projeto[]
+  image = 'assets/images/default-project.svg'
+  @Input() projeto: Projeto
   constructor(private router: Router) { }
 
   ngOnInit() {
-    info(this.projetos)
+    info(this.projeto)
   }
 
-  novo() {
-    this.router.navigate(['projeto', 'novo'])
+  teste(event: any) {
+    event.preventDefault()
+    event.stopPropagation()
   }
+
+
 
 }

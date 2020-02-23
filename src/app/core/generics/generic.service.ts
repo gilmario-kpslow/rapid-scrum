@@ -15,7 +15,7 @@ export abstract class GenericService<T extends GenericEntity> {
   constructor(_url: string, injector: Injector, private type: {new (): T}) {
     this._url = `${environment.api}/${_url}`
     this._injector = injector
-    this._http = this._injector.get(HttpClient);
+    this._http = this._injector.get(HttpClient)
     this.serializador = new Serializador<T>(this.type)
    }
 
@@ -26,7 +26,7 @@ export abstract class GenericService<T extends GenericEntity> {
   }
 
   salvar(entity: T): Observable<T> {
-    return this._http.post<T>(`${this._url}/registrar`, entity)
+    return this._http.post<T>(`${this._url}`, entity)
     .pipe( take(1))
   }
 

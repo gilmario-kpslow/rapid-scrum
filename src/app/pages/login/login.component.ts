@@ -31,7 +31,6 @@ export class LoginComponent implements OnInit {
   login(): void {
     processForm(this.form, () => {
       this.loginService.logar(this.form.value.username, this.form.value.password).subscribe(u => {
-        console.log(u)
         this.segurancaService.setUsuarioLogado(u)
         this.appService.mountMenu()
         this.router.navigate(['/'])

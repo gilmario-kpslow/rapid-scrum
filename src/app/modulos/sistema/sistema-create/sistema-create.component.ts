@@ -31,8 +31,7 @@ export class SistemaCreateComponent implements OnInit {
   save() {
     const novoSistema: Sistema = this.form.getRawValue() as Sistema
     this.sistemaService.salvar(novoSistema).subscribe(
-      () => this.router.navigate(['../sistema']),
-      err => console.log(err)
+      () => this.router.navigate(['../sistema'])
     )
   }
 

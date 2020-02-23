@@ -1,37 +1,18 @@
-<mat-card class="mt-3 mb-3" color="red">
-  <h3 class="text-uppercase">Criar novo projeto</h3>
-</mat-card>
-<mat-card>
-  <!-- <mat-card-header>
-    <div mat-card-avatar class="header-image"></div>
-    <mat-card-subtitle class="subtitulo">Cadastro de sistema</mat-card-subtitle>
-    <mat-card-title class="titulo">teste</mat-card-title>
-  </mat-card-header> -->
-  <mat-card-content>
+<app-painel titulo="Criar novo projeto">
     <form [formGroup]="form">
       <div class="row">
-        <div class="col">
-          <mat-form-field>
-            <input type="text" matInput formControlName="nome" autocomplete="off" placeholder="Nome"/>
-            <mat-icon *ngIf="!validarControle('nome')" color="text-green" matSuffix>done</mat-icon>
-            <mat-icon *ngIf="invalidarControle('nome')" color="warn" matSuffix>clear</mat-icon>
-            <mat-error *ngIf="validarControle('nome')">{{getErros('nome')}}</mat-error>
-          </mat-form-field>
+        <div class="col-md-9">
+            <app-input-default formControlName="nome" type="text" minlength="3" maxlength="30" placeholder="Nome" required></app-input-default>
         </div>
-        <div class="col">
-
-        </div>
+        <div class="col-md-3">
+          <app-input-default formControlName="sigla" type="text" minlength="3" maxlength="10" placeholder="Sigla" required></app-input-default>
+      </div>
+      <div class="col-md-12">
+        <app-input-default formControlName="descricao" type="text" maxlength="2048" placeholder="Descricao" required></app-input-default>
+    </div>
       </div>
     </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>Ver</button>
-    <button mat-button>Remover</button>
-  </mat-card-actions>
-</mat-card>
-
-<div class="painel">
-  {{form.value | json}}
-</div>
-
-
+    <div footer class="d-flex wid-100">
+      <button mat-raised-button (click)="salvar()"> Criar</button>
+    </div>
+</app-painel>

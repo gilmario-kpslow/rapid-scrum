@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  api: "http://servidor.truesystem.com.br:9000"
-};
+  api: "http://servidor.truesystem.com.br:9000",
+  debug: true
+}

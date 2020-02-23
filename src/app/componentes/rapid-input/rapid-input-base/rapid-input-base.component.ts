@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ContentChild } from '@angular/core';
 import { FormControlName, FormControl, FormGroup } from '@angular/forms';
+import { info } from '../../../core/util/log_util';
 
 @Component({
   selector: 'app-rapid-input-base',
@@ -16,7 +17,7 @@ export class RapidInputBaseComponent implements OnInit {
 
   ngOnInit() {
     this.control = this.form.controls[this.name]
-    console.log(this.control)
+    info(this.control)
   }
 
   validarControle(): boolean {
@@ -24,7 +25,7 @@ export class RapidInputBaseComponent implements OnInit {
   }
 
   inicializado() {
-    console.log(this.control !== undefined)
+    info(this.control !== undefined)
     return this.control !== undefined
   }
 
