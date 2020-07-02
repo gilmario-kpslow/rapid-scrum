@@ -12,9 +12,7 @@
     "build": "ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "server": "http-server dist -p 80",
-    "deploy": "http-server dist -p 80"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

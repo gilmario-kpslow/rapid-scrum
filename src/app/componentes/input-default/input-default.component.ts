@@ -88,7 +88,7 @@ export class InputDefaultComponent implements MatFormFieldControl<string>, OnDes
   }
 
   ngOnInit() {
-    this.control = this.ngControl.control as FormControl
+    this.control = this.ngControl ? this.ngControl.control as FormControl : this.control
   }
 
   setDescribedByIds(ids: string[]) {

@@ -24,10 +24,11 @@ export class AplicacaoService {
   private mountMenuLogado() {
     this._menuDisponivel = [
       this.menuConsts.dashboard,
+      this.menuConsts.usuario,
       this.menuConsts.projeto,
-      this.menuConsts.logout,
       this.menuConsts.apps,
-      this.menuConsts.configuracoes
+      this.menuConsts.configuracoes,
+      this.menuConsts.logout,
     ]
   }
 

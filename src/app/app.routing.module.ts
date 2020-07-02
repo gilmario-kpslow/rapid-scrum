@@ -13,10 +13,11 @@ const routes: Routes = [
     {path: 'dashboard', component: DashboardComponent, data: {animation: 'dashboard'}},
     {path: 'login', component: LoginComponent, canActivate: [LoginGuard], data: {animation: 'login'}},
     {path: 'projeto', canActivate: [AuthService], loadChildren: './modulos/projeto/projeto.module#ProjetoModule',
-    data: {animation: 'projeto'}},
+     data: {animation: 'projeto'}},
     {path: 'registro',  loadChildren: './modulos/usuario/usuario.module#UsuarioModule', data: {animation: 'cadastro'}},
     {path: 'apps', loadChildren: './modulos/game/game.module#GameModule', data: {animation: 'apps'}},
     {path: 'sistema', loadChildren: './modulos/sistema/sistema.module#SistemaModule', data: {animation: 'sistema'}},
+    {path: 'usuario', loadChildren: './modulos/usuario/usuario.module#UsuarioModule', data: {animation: 'sistema'}},
     {path: 'modulo', loadChildren: './modulos/modulo/modulo.module#ModuloModule', data: {animation: 'modulo'}},
     {path: 'admin', loadChildren: './modulos/admin/admin.module#AdminModule', data: {animation: 'admin'}},
     {path: 'logout', component: LogoutComponent, data: {animation: 'logout'}}

@@ -9,5 +9,6 @@ export class MenuConsts {
   apps = new MenuItem({key: 'apps', nome: 'Apps', rota: ['/', 'apps'], icone: 'videogame_asset'})
   logout = new MenuItem({key: 'logout', nome: 'Logout', rota: ['/', 'logout'], icone: 'exit_to_app'})
   configuracoes = new MenuItem({key: 'conf', nome: 'Configuracao', rota: ['/', 'conf'], icone: 'settings'})
+  usuario = new MenuItem({key: 'usuario', nome: 'Usuário', rota: ['/', 'usuario'], icone: 'people'})
 
 }

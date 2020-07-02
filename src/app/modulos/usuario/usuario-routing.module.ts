@@ -1,10 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
-import { UsuarioCadastroComponent } from './usuario-cadastro/usuario-cadastro.component';
+import { NgModule } from '@angular/core'
+import { RouterModule, Routes } from '@angular/router'
+import { UsuarioListaComponent } from './usuario-lista/usuario-lista.component'
 
 const routes: Routes = [
-  {path: '', component: UsuarioCadastroComponent},
+  {path: '', component: UsuarioListaComponent},
 ]
 
 @NgModule({

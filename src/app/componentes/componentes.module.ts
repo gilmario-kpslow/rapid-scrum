@@ -15,7 +15,9 @@ import { MensagensComponent } from './mensagens/mensagens.component'
 import { ActionButtonComponent } from './action-button/action-button.component'
 import { DateParseDirective } from './directives/date-parse.directive'
 import { InputDefaultComponent } from './input-default/input-default.component';
-import { RapidPaginatorComponent } from './rapid-paginator/rapid-paginator.component'
+import { RapidPaginatorComponent } from './rapid-paginator/rapid-paginator.component';
+import { CardListComponent } from './card-list/card-list.component';
+import { CardListInfoComponent } from './card-list/card-list-info/card-list-info.component'
 
 @NgModule({
   imports: [
@@ -37,7 +39,9 @@ import { RapidPaginatorComponent } from './rapid-paginator/rapid-paginator.compo
     ActionButtonComponent,
     DateParseDirective,
     InputDefaultComponent,
-    RapidPaginatorComponent
+    RapidPaginatorComponent,
+    CardListComponent,
+    CardListInfoComponent
 
   ],
   exports: [
@@ -53,7 +57,8 @@ import { RapidPaginatorComponent } from './rapid-paginator/rapid-paginator.compo
     MensagemContainerComponent,
     DateParseDirective,
     InputDefaultComponent,
-    RapidPaginatorComponent
+    RapidPaginatorComponent,
+    CardListComponent
 
 
   ],
